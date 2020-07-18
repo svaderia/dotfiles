@@ -1,0 +1,21 @@
+[submodule ".vim/pack/tpope/start/vim-surround"]
+	path = .vim/pack/tpope/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule ".config/ohmyzsh/plugins/zsh-autosuggestions"]
+	path = .config/ohmyzsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "powerlevel10k"]
+	path = powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
+[submodule ".vim/pack/color/start/onedark.vim"]
+	path = .vim/pack/color/start/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
+[submodule ".vim/pack/bundle/start/vim-polyglot"]
+	path = .vim/pack/bundle/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/pack/tpope/start/vim-repeat"]
+	path = .vim/pack/tpope/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
