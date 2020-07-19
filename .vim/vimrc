@@ -154,7 +154,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>wq :call <SID>StripTrailingWhitespaces()<CR>:wq<CR>
 
 " mapping enter key to enter a line in normal mode
-nnoremap <CR> o<ESC>
+nnoremap <CR> O<ESC>j
 
 " Enable project specific vimrc file support
 set exrc
@@ -162,15 +162,16 @@ set secure
 
 " Code Folding
 set foldenable
-set foldlevelstart=10 " Fold only long blocks of code.
-set foldnestmax=10 " Folds can be nested, this ensures max 10 nested folds.
-set foldmethod=indent " Folding based on indentation.
-" This is especially useful for me since I spend my days in Python.
+set foldlevelstart=10       " Fold only long blocks of code.
+set foldnestmax=10          " Folds can be nested, this ensures max 10 nested folds.
+set foldmethod=indent       " Folding based on indentation.
 " Other acceptable values are marker, manual, expr, syntax, diff.
-" Run :help foldmethod to find out what each of those do.
+
+" Auto saving/loading folds on exit/enter
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
+" fold/unfold
 nnoremap <Leader><Leader> za
 
 " Turn off swap files and backups.
@@ -183,3 +184,21 @@ set nowritebackup
 " Setup autocmd for running g++ files for cp
 " example : autocmd filetype python nnoremap <buffer> <F5> :w<CR>:!clear;python %<CR>
 
+
+" Plugins
+
+" vim-commentary        : gc (go comment)
+" vim-cutlass           : By default delete commands means delete, so we map other keys to cut
+nnoremap <Leader>x d
+xnoremap <Leader>x d
+nnoremap <Leader>xx dd
+nnoremap <Leader>x D
+
+" vim-subversive        : TODO
+" vim-yoink             : TODO
+let g:yoinkIncludeDeleteOperations=1
+
+" vim-replace-with-register : [count]["x]gr{motion}   Replace {motion} text with the contents of register x.
+" vim-sort-motion       : gs{motion} (go sort}
+" vim-system-copy       : cp{motion} cv{motion}
+let g:system_copy_silent = 1
