@@ -1,4 +1,4 @@
-alias cc='~/Shyamal/GitHub/Competitive-Coding'
+alias ccd='~/Shyamal/GitHub/Competitive-Coding'
 alias solved="python3 ~/Shyamal/GitHub/Competitive-Coding/update_readme.py solved"
 alias update="python3 ~/Shyamal/GitHub/Competitive-Coding/update_readme.py"
 
