@@ -55,3 +55,21 @@
 [submodule ".vim/pack/bundle/start/vim-subversive"]
 	path = .vim/pack/bundle/start/vim-subversive
 	url = https://github.com/svermeulen/vim-subversive
+[submodule ".vim/pack/bundle/start/nerdtree"]
+	path = .vim/pack/bundle/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule ".vim/pack/bundle/start/vim-devicons"]
+	path = .vim/pack/bundle/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule ".vim/pack/bundle/start/vim-nerdtree-syntax-highlight"]
+	path = .vim/pack/bundle/start/vim-nerdtree-syntax-highlight
+	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight
+[submodule ".vim/pack/bundle/start/vim-airline"]
+	path = .vim/pack/bundle/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/pack/bundle/start/matchit"]
+	path = .vim/pack/bundle/start/matchit
+	url = https://github.com/chrisbra/matchit
+[submodule ".vim/pack/bundle/start/vim-gitgutter"]
+	path = .vim/pack/bundle/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
