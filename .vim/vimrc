@@ -13,6 +13,8 @@ syntax on                  " Enable syntax highlighting.
 packadd! onedark.vim
 let g:onedark_hide_endofbuffer=1
 let g:onedark_terminal_italics=1
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts=1
 colorscheme onedark
 if (has("termguicolors"))
     set termguicolors
@@ -168,8 +170,10 @@ set foldmethod=indent       " Folding based on indentation.
 " Other acceptable values are marker, manual, expr, syntax, diff.
 
 " Auto saving/loading folds on exit/enter
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+" Enable it after you know about functions and run this command only when file
+" is writable
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
 
 " fold/unfold
 nnoremap <Leader><Leader> za
@@ -202,3 +206,10 @@ let g:yoinkIncludeDeleteOperations=1
 " vim-sort-motion       : gs{motion} (go sort}
 " vim-system-copy       : cp{motion} cv{motion}
 let g:system_copy_silent = 1
+" nerdtree
+" Close vim if only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-b> :NERDTreeToggle<CR>
+" Open nerdtree when you just open the vim
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
