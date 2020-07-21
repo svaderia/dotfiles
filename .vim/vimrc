@@ -85,6 +85,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Change behaviour of  (j, k) to move the lines up and down in normal
+" mode and move the section of code up and down in visual mode
+nnoremap <Leader>j ddp
+nnoremap <Leader>k dd2kp
+
 " Search results centered please
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -196,7 +201,7 @@ set nowritebackup
 nnoremap <Leader>x d
 xnoremap <Leader>x d
 nnoremap <Leader>xx dd
-nnoremap <Leader>x D
+nnoremap <Leader>X D
 
 " vim-subversive        : TODO
 " vim-yoink             : TODO
