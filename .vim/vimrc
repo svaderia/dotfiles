@@ -26,6 +26,7 @@ set softtabstop =4         " Tab key indents by 4 spaces.
 set shiftwidth  =4         " >> indents by 4 spaces.
 set tabstop     =4         "
 set shiftround             " >> indents to next multiple of 'shiftwidth'.
+set mouse+=a
 
 set backspace   =indent,eol,start  " Make backspace work as you would expect.
 set hidden                 " Switch between buffers without having to save first.
@@ -193,6 +194,9 @@ set nowritebackup
 " Setup autocmd for running g++ files for cp
 " example : autocmd filetype python nnoremap <buffer> <F5> :w<CR>:!clear;python %<CR>
 
+" change the word to upper char in insert mode
+" Useful when you want type a big variable name in CAPS
+inoremap <C-u> <Esc>viwUi
 
 " Plugins
 
@@ -218,3 +222,5 @@ map <C-b> :NERDTreeToggle<CR>
 " Open nerdtree when you just open the vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" vim-localvimrc
+let g:localvimrc_ask=0
