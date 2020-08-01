@@ -76,3 +76,6 @@
 [submodule ".vim/pack/bundle/start/vim-localvimrc"]
 	path = .vim/pack/bundle/start/vim-localvimrc
 	url = https://github.com/embear/vim-localvimrc
+[submodule ".vim/pack/bundle/start/vim-dispatch"]
+	path = .vim/pack/bundle/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
