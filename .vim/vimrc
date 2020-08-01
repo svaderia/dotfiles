@@ -174,7 +174,7 @@ nmap <Leader>q :q<CR>
 nmap <Leader>wq :call <SID>StripTrailingWhitespaces()<CR>:wq<CR>
 
 " mapping enter key to enter a line in normal mode
-nnoremap <CR> O<ESC>j
+nnoremap <CR> mtO<ESC>d$`t
 
 " Enable project specific vimrc file support
 set exrc
@@ -227,17 +227,19 @@ let g:yoinkIncludeDeleteOperations=1
 " vim-sort-motion       : gs{motion} (go sort}
 " vim-system-copy       : cp{motion} cv{motion}
 let g:system_copy_silent = 1
-" nerdtree
+
+" NERDTREE
 " Close vim if only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-b> :NERDTreeToggle<CR>
+" Open nerd tree at the current file or close nerd tree if pressed again.
+nnoremap <silent> <expr> <Leader>b g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 " Open nerdtree when you just open the vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " vim-localvimrc
 let g:localvimrc_sandbox=0
 let g:localvimrc_ask=0
-
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
