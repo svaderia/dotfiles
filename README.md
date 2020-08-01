@@ -1,6 +1,6 @@
 # dotfiles
 
-I have used git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) and git bare repository to maintain my dotfiles. 
+I am using git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) and git bare repository to maintain my dotfiles.
 
 ## Migrate to a new system
 ```bash
