@@ -12,6 +12,7 @@ alias py="~/pyscript.py"
 alias gstore="git config credential.helper store"
 alias gfpush="git config credential.helper store && git push origin master"
 alias gfcommit='git add . && git commit -m ":rocket: Initial Commit"'
+alias gd='git difftool'
 
 alias ip="ip -c"
 
@@ -26,19 +27,17 @@ alias gd++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2"
 startcomp () {
     mkdir -p $1
     touch $1/test
-    touch $1/solution.cpp
-    vim $1/solution.cpp
+    cp $CCTEMPLATEPATH/solution.cpp $1/solution.cpp
 }
 
-# contest(){
-#     for fl in a ... f: do
-#         mkdir $fl
-#         cd $fl
-#         cp /Users/svaderia/Shyamal/GitHub/Competitive-Coding/TEMPLATE/solution.cpp ./solution.cpp
-#         touch test
-#         cd ..
-#     done
-# }
+contest () {
+    mkdir -p $1
+    cd $1
+    for fl in {a..f}
+    do
+        startcomp "$fl"
+    done
+}
 
 alias latest='fd ".*/*solution.(cpp|py)" -0 | xargs -0 stat -f "%m%t%Sm %N" | sort -rn | cut -f2- | head '
 
@@ -55,3 +54,4 @@ alias cupdatesub='git submodule update --remote --merge'
 alias cst='config status'
 alias ca='config add'
 alias cc='config commit'
+alias ccpush='config push'
