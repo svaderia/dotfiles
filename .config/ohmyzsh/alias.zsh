@@ -24,10 +24,15 @@ pyclean () {
 alias g++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2 -D DEBUG"
 alias gd++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2"
 
-startcomp () {
+start () {
     mkdir -p $1
     touch $1/test
     cp $CCTEMPLATEPATH/solution.cpp $1/solution.cpp
+}
+
+startcomp() {
+    start $1
+    vim $1/solution.cpp
 }
 
 contest () {
@@ -35,7 +40,7 @@ contest () {
     cd $1
     for fl in {a..f}
     do
-        startcomp "$fl"
+        start "$fl"
     done
 }
 

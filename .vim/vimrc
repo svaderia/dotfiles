@@ -46,9 +46,6 @@ set incsearch              " Highlight while searching with / or ?.
 set hlsearch               " Keep matches highlighted.
 set ignorecase             " Ignore case when searching
 set smartcase              " Do not ignore case when all the letters are capital
-" turn off search highlight
-vnoremap <C-n> :nohlsearch<CR>
-nnoremap <C-n> :nohlsearch<CR>
 
 set ttyfast                " Faster redrawing.
 set lazyredraw             " Only redraw when necessary.
@@ -68,16 +65,50 @@ set splitright          " Open new horizontal splits right
 set linebreak           " Have lines wrap instead of continue off-screen
 set scrolloff=28        " Keep cursor in approximately the middle of the screen
 
-" Going to the end and the beginning of a line
-map H ^
-map L $
+set nu rnu                  " Set line numbers
 
 " Undo
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
 
-" Leader
-let mapleader=" "       " leader is space
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" Code Folding
+set foldenable
+set foldlevelstart=10       " Fold only long blocks of code.
+set foldnestmax=10          " Folds can be nested, this ensures max 10 nested folds.
+set foldmethod=indent       " Folding based on indentation.
+" Other acceptable values are marker, manual, expr, syntax, diff.
+
+" Enable project specific vimrc file support
+set exrc
+set secure
+
+" Turn off swap files and backups.
+set noswapfile
+set nobackup
+set nowritebackup
+
+" change the word to upper char in insert mode
+" Useful when you want type a big variable name in CAPS
+inoremap <C-u> <Esc>viwUi
+
+" mapping enter key to enter a line in normal mode
+nnoremap <CR> mtO<ESC>d$`t
+
+" Going to the end and the beginning of a line
+map H ^
+map L $
+
+" turn off search highlight
+vnoremap <C-n> :nohlsearch<CR>
+nnoremap <C-n> :nohlsearch<CR>
+nohlsearch
 
 " (Shift)Tab (de)indents code
 vnoremap <Tab> >
@@ -89,22 +120,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Copy the entire file in system clipboard
-nnoremap <Leader>y :%y+<CR>
-
-" Open terminal in vertical split inside vim
-nnoremap <Leader>t :vertical terminal<CR>
-
 " quicker window movement in terminal mode
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-h> <C-w>h
 tnoremap <C-l> <C-w>l
-
-" Change behaviour of  (j, k) to move the lines up and down in normal
-" mode and move the section of code up and down in visual mode
-" nnoremap <Leader>j ddp
-" nnoremap <Leader>k dd2kp
 
 " Search results centered please
 nnoremap <silent> n nzz
@@ -121,8 +141,6 @@ else
   let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 endif
 
-set nu rnu                  " Set line numbers
-
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
@@ -138,13 +156,6 @@ vnoremap jk <ESC>
 
 " FINDING FILES:
 
-" Search down into subfolders
-" Provides tab-completion for all file-related tasks
-set path+=**
-
-" Display all matching files when we tab complete
-set wildmenu
-
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -153,6 +164,16 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" Leader
+let mapleader=" "       " leader is space
+
+" Copy the entire file in system clipboard
+nnoremap <Leader>y :%y+<CR>
+
+" Open terminal in vertical split inside vim
+nnoremap <Leader>t :vertical terminal<CR>
+
+" Open and source vimrc
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
@@ -164,6 +185,7 @@ function! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
+    %s/^\n\+/\r/e
     let @/=_s
     call cursor(l, c)
 endfunction
@@ -172,20 +194,6 @@ endfunction
 nmap <Leader>w :call <SID>StripTrailingWhitespaces()<CR>:w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>wq :call <SID>StripTrailingWhitespaces()<CR>:wq<CR>
-
-" mapping enter key to enter a line in normal mode
-nnoremap <CR> mtO<ESC>d$`t
-
-" Enable project specific vimrc file support
-set exrc
-set secure
-
-" Code Folding
-set foldenable
-set foldlevelstart=10       " Fold only long blocks of code.
-set foldnestmax=10          " Folds can be nested, this ensures max 10 nested folds.
-set foldmethod=indent       " Folding based on indentation.
-" Other acceptable values are marker, manual, expr, syntax, diff.
 
 " Auto saving/loading folds on exit/enter
 " Enable it after you know about functions and run this command only when file
@@ -196,19 +204,10 @@ set foldmethod=indent       " Folding based on indentation.
 " fold/unfold
 nnoremap <Leader><Leader> za
 
-" Turn off swap files and backups.
-set noswapfile
-set nobackup
-set nowritebackup
-
 " Learn folding, add plugins, You can look following for the reference
 " https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc
 " Setup autocmd for running g++ files for cp
 " example : autocmd filetype python nnoremap <buffer> <F5> :w<CR>:!clear;python %<CR>
-
-" change the word to upper char in insert mode
-" Useful when you want type a big variable name in CAPS
-inoremap <C-u> <Esc>viwUi
 
 " Plugins
 
@@ -247,3 +246,5 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+
