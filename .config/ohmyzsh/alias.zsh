@@ -30,7 +30,7 @@ start () {
     cp $CCTEMPLATEPATH/solution.cpp $1/solution.cpp
 }
 
-startcomp() {
+sc() {
     start $1
     vim $1/solution.cpp
 }

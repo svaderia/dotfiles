@@ -20,50 +20,48 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-set autoindent             " Indent according to previous line.
-set expandtab              " Use spaces instead of tabs.
-set softtabstop =4         " Tab key indents by 4 spaces.
-set shiftwidth  =4         " >> indents by 4 spaces.
-set tabstop     =4         "
-set shiftround             " >> indents to next multiple of 'shiftwidth'.
+set autoindent              " Indent according to previous line.
+set expandtab               " Use spaces instead of tabs.
+set softtabstop =4          " Tab key indents by 4 spaces.
+set shiftwidth  =4          " >> indents by 4 spaces.
+set tabstop     =4
+set shiftround              " >> indents to next multiple of 'shiftwidth'.
 set mouse+=a
 
 set backspace   =indent,eol,start  " Make backspace work as you would expect.
-set hidden                 " Switch between buffers without having to save first.
-set laststatus  =2         " Always show statusline.
-set display     =lastline  " Show as much as possible of the last line.
+set hidden                  " Switch between buffers without having to save first.
+set laststatus  =2          " Always show statusline.
+set display     =lastline   " Show as much as possible of the last line.
 
-set showmode               " Show current mode in command-line.
-set showcmd                " Show already typed keys when more are expected.
-set showmatch              " show matching bracket (briefly jump)
-set scrolloff=2            " 2 lines above/below cursor when scrolling
+set showmode                " Show current mode in command-line.
+set showcmd                 " Show already typed keys when more are expected.
+set showmatch               " show matching bracket (briefly jump)
 
-set title                  " Show file name in title bar
-set smartindent            " smart auto indenting
-set smarttab               " smart tab handling for indenting
+set title                   " Show file name in title bar
+set smartindent             " smart auto indenting
+set smarttab                " smart tab handling for indenting
 
-set incsearch              " Highlight while searching with / or ?.
-set hlsearch               " Keep matches highlighted.
-set ignorecase             " Ignore case when searching
-set smartcase              " Do not ignore case when all the letters are capital
+set incsearch               " Highlight while searching with / or ?.
+set hlsearch                " Keep matches highlighted.
+set ignorecase              " Ignore case when searching
+set smartcase               " Do not ignore case when all the letters are capital
 
-set ttyfast                " Faster redrawing.
-set lazyredraw             " Only redraw when necessary.
+set ttyfast                 " Faster redrawing.
+set lazyredraw              " Only redraw when necessary.
+set splitbelow              " Open new windows below the current window.
+set splitright              " Open new windows right of the current window.
+set cursorline              " Find the current line quickly.
+set wrapscan                " Searches wrap around end-of-file.
+set report      =0          " Always report changed lines.
+set synmaxcol   =200        " Only highlight the first 200 columns.
 
-set splitbelow             " Open new windows below the current window.
-set splitright             " Open new windows right of the current window.
-set cursorline             " Find the current line quickly.
-set wrapscan               " Searches wrap around end-of-file.
-set report      =0         " Always report changed lines.
-set synmaxcol   =200       " Only highlight the first 200 columns.
-
-set history=8192           " Increase History
-set list                   " Show non-printable characters.
+set history     =8192       " Increase History
+set list                    " Show non-printable characters.
 set noerrorbells visualbell t_vb=    "Disable annoying error noises
-set splitbelow          " Open new vertical split bottom
-set splitright          " Open new horizontal splits right
-set linebreak           " Have lines wrap instead of continue off-screen
-set scrolloff=28        " Keep cursor in approximately the middle of the screen
+set splitbelow              " Open new vertical split bottom
+set splitright              " Open new horizontal splits right
+set linebreak               " Have lines wrap instead of continue off-screen
+set scrolloff   =28         " Keep cursor in approximately the middle of the screen
 
 set nu rnu                  " Set line numbers
 
@@ -80,9 +78,9 @@ set wildmenu
 
 " Code Folding
 set foldenable
-set foldlevelstart=10       " Fold only long blocks of code.
+set foldlevelstart=1        " Fold only long blocks of code.
 set foldnestmax=10          " Folds can be nested, this ensures max 10 nested folds.
-set foldmethod=indent       " Folding based on indentation.
+set foldmethod=syntax       " Folding based on indentation.
 " Other acceptable values are marker, manual, expr, syntax, diff.
 
 " Enable project specific vimrc file support
@@ -99,7 +97,7 @@ set nowritebackup
 inoremap <C-u> <Esc>viwUi
 
 " mapping enter key to enter a line in normal mode
-nnoremap <CR> mtO<ESC>d$`t
+nnoremap <CR> mtO<ESC>0D`t
 
 " Going to the end and the beginning of a line
 map H ^
@@ -109,10 +107,6 @@ map L $
 vnoremap <C-n> :nohlsearch<CR>
 nnoremap <C-n> :nohlsearch<CR>
 nohlsearch
-
-" (Shift)Tab (de)indents code
-vnoremap <Tab> >
-vnoremap <S-Tab> <
 
 " quicker window movement
 nnoremap <C-j> <C-w>j
@@ -177,6 +171,10 @@ nnoremap <Leader>t :vertical terminal<CR>
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
+" Page up/down
+nnoremap <Leader>j <C-d>
+nnoremap <Leader>k <C-u>
+
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
 function! <SID>StripTrailingWhitespaces()
@@ -206,11 +204,8 @@ nnoremap <Leader><Leader> za
 
 " Learn folding, add plugins, You can look following for the reference
 " https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc
-" Setup autocmd for running g++ files for cp
-" example : autocmd filetype python nnoremap <buffer> <F5> :w<CR>:!clear;python %<CR>
 
 " Plugins
-
 " vim-commentary        : gc (go comment)
 " vim-cutlass           : By default delete commands means delete, so we map other keys to cut
 nnoremap <Leader>x d
@@ -240,11 +235,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:localvimrc_sandbox=0
 let g:localvimrc_ask=0
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" Vim jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-
-
