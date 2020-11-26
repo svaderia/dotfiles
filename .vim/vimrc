@@ -65,6 +65,7 @@ set scrolloff   =28         " Keep cursor in approximately the middle of the scr
 
 set nu rnu                  " Set line numbers
 
+set updatetime  =100        " Set update time to 100ms
 " Undo
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
@@ -240,3 +241,15 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+"vim-gitgutter
+" ]c & [c  : Jumbe between hunks
+" <Leader>hu : Undo Hunk
+" <Leader>hs : Stage Hunk
+" <Leader>hp : Preview Hunk
+command! Gqf GitGutterQuickFix | copen
+nnoremap <Leader>gf :Gqf<CR>
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
