@@ -60,3 +60,15 @@ alias cst='config status'
 alias ca='config add'
 alias cc='config commit'
 alias ccpush='config push'
+
+# Alias for directory hisotry
+alias d='dirs -v | head -10'
+
+# Change jdk version dynamicly 
+jdk() {
+    version=$1
+    unset JAVA_HOME;
+    export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+    java -version
+}
+

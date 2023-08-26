@@ -46,9 +46,6 @@
 [submodule ".vim/pack/bundle/start/vim-replace-with-register"]
 	path = .vim/pack/bundle/start/vim-replace-with-register
 	url = https://github.com/vim-scripts/ReplaceWithRegister
-[submodule ".vim/pack/bundle/start/vim-cutlass"]
-	path = .vim/pack/bundle/start/vim-cutlass
-	url = https://github.com/svermeulen/vim-cutlass
 [submodule ".vim/pack/bundle/start/vim-yoink"]
 	path = .vim/pack/bundle/start/vim-yoink
 	url = https://github.com/svermeulen/vim-yoink

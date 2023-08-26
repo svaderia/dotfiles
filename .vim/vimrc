@@ -79,7 +79,7 @@ set wildmenu
 
 " Code Folding
 set foldenable
-set foldlevelstart=1        " Fold only long blocks of code.
+set foldlevelstart=10       " Fold only long blocks of code.
 set foldnestmax=10          " Folds can be nested, this ensures max 10 nested folds.
 set foldmethod=syntax       " Folding based on indentation.
 " Other acceptable values are marker, manual, expr, syntax, diff.
