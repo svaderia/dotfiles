@@ -64,7 +64,7 @@ alias ccpush='config push'
 # Alias for directory hisotry
 alias d='dirs -v | head -10'
 
-# Change jdk version dynamicly 
+# Change jdk version dynamicly
 jdk() {
     version=$1
     unset JAVA_HOME;
@@ -73,3 +73,5 @@ jdk() {
 }
 
 alias sctf="ssh -D 8123 -C -q -N tunneller@ctf.ini.cmu.edu"
+
+alias ealias="vim ~/.config/ohmyzsh/alias.zsh"
