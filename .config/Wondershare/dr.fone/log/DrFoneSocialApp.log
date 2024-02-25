@@ -1,0 +1,298 @@
+05-06-2021 19:16:13 
+=======================================
+05-06-2021 19:16:13 Program.Start Product=dr.fone, Version=10.4.0.309
+05-06-2021 19:16:13 Program.InitLog
+05-06-2021 19:16:13 CodeUpdate.Test
+05-06-2021 19:16:13 Program.InitCustomize
+05-06-2021 19:16:14 <IsSwitchOpen> start parsing json...
+05-06-2021 19:16:14 <IsSwitchOpen> str:{"code":200,"status":"off"}
+05-06-2021 19:16:14 =======Record App version: 2.19.230======
+05-06-2021 19:16:14 <OnlineRatingSwitchHelper> 1
+05-06-2021 19:16:14 ConnectionScanTask start
+05-06-2021 19:16:14 ConnectionScanTask End
+05-06-2021 19:16:14 RegisterUSBDevicesNotify handle:140585912779104
+05-06-2021 19:16:14 MacMonitorTask start=============================
+05-06-2021 19:16:14 Add device: 0000000000000000
+05-06-2021 19:16:14 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBVHCIBCE@80000000/Apple T2 Controller@80100000
+05-06-2021 19:16:14 AddUSBConnection device: IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBVHCIBCE@80000000/Apple T2 Controller@80100000
+05-06-2021 19:16:15 <OnlineRatingSwitchHelper> 2
+05-06-2021 19:16:15 <OnlineRatingSwitchHelper> 3
+05-06-2021 19:16:15 Read device database error:System.Data.SQLite.SQLiteException (0x80004005): SQLite error
+no such table: t_deviceinfo
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x00236] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000eb] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x0000b] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x000db] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x00051] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x00006] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x00000] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.FillInternal (System.Data.DataSet dataset, System.Data.DataTable[] datatables, System.Int32 startRecord, System.Int32 maxRecords, System.String srcTable, System.Data.IDbCommand command, System.Data.CommandBehavior behavior) [0x0003f] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.Fill (System.Data.DataTable[] dataTables, System.Int32 startRecord, System.Int32 maxRecords, System.Data.IDbCommand command, System.Data.CommandBehavior behavior) [0x0007c] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.Fill (System.Data.DataTable dataTable) [0x00034] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbDataAdapter.Fill(System.Data.DataTable)
+  at j7+b.e () [0x000a8] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at j7.p (System.String A_0, System.Data.SQLite.SQLiteParameter[] A_1) [0x0001c] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at j7.h (System.String A_0) [0x0003c] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at al6.a (als A_0) [0x00164] in <4463225a949c41278883b5b49db950b0>:0 
+05-06-2021 19:16:15 Add device: 00008101000D4C3C3EE1001E
+05-06-2021 19:16:15 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/iPhone@14300000
+05-06-2021 19:16:15 AddUSBConnection device: IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/iPhone@14300000
+05-06-2021 19:16:15 ConnectionHub.AddConnection(IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/iPhone@14300000, iOS, 00008101000D4C3C3EE1001E)
+05-06-2021 19:16:15 Connection inserter Start
+05-06-2021 19:16:15 Connection inserter create new device
+05-06-2021 19:16:15 Connection inserter device is iOS
+05-06-2021 19:16:15 Connection inserter AddService
+05-06-2021 19:16:15 Device manager add device SerialNumber: 00008101000D4C3C3EE1001E
+05-06-2021 19:16:15 Add device: 0000000000000001
+05-06-2021 19:16:15 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/USB Billboard Device   @14250000
+05-06-2021 19:16:15 AddUSBConnection device: IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/USB Billboard Device   @14250000
+05-06-2021 19:16:16 Read device database error:System.Data.SQLite.SQLiteException (0x80004005): SQLite error
+no such table: t_deviceinfo
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x00236] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000eb] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x0000b] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x000db] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x00051] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x00006] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x00000] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.FillInternal (System.Data.DataSet dataset, System.Data.DataTable[] datatables, System.Int32 startRecord, System.Int32 maxRecords, System.String srcTable, System.Data.IDbCommand command, System.Data.CommandBehavior behavior) [0x0003f] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.Fill (System.Data.DataTable[] dataTables, System.Int32 startRecord, System.Int32 maxRecords, System.Data.IDbCommand command, System.Data.CommandBehavior behavior) [0x0007c] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.Fill (System.Data.DataTable dataTable) [0x00034] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbDataAdapter.Fill(System.Data.DataTable)
+  at j7+b.e () [0x000a8] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at j7.p (System.String A_0, System.Data.SQLite.SQLiteParameter[] A_1) [0x0001c] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at j7.h (System.String A_0) [0x0003c] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at al6.a (als A_0) [0x00164] in <4463225a949c41278883b5b49db950b0>:0 
+05-06-2021 19:16:16 Add device: b0bfc208
+05-06-2021 19:16:16 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000
+05-06-2021 19:16:16 AddUSBConnection device: IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000
+05-06-2021 19:16:16 ConnectionHub.AddConnection(IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000, Android, b0bfc208)
+05-06-2021 19:16:16 Connection inserter Start
+05-06-2021 19:16:16 Connection inserter create new device
+05-06-2021 19:16:16 Connection inserter device is Android
+05-06-2021 19:16:16 Connection inserter AddService
+05-06-2021 19:16:16 Device manager add device SerialNumber: b0bfc208
+05-06-2021 19:16:16 Add device: 001000001
+05-06-2021 19:16:16 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@01000000/USB 10/100/1000 LAN@01230000
+05-06-2021 19:16:16 AddUSBConnection device: IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@01000000/USB 10/100/1000 LAN@01230000
+05-06-2021 19:16:17 Read device database error:System.Data.SQLite.SQLiteException (0x80004005): SQLite error
+no such table: t_deviceinfo
+  at System.Data.SQLite.SQLite3.Prepare (System.Data.SQLite.SQLiteConnection cnn, System.String strSql, System.Data.SQLite.SQLiteStatement previous, System.UInt32 timeoutMS, System.String& strRemain) [0x00236] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.BuildNextCommand () [0x000eb] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.GetStatement (System.Int32 index) [0x0000b] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteCommand.GetStatement(int)
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x000db] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x00051] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x00006] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteDbDataReader (System.Data.CommandBehavior behavior) [0x00000] in <11ca4cdea1f442cc9806e1ea6da122b4>:0 
+  at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x00000] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.FillInternal (System.Data.DataSet dataset, System.Data.DataTable[] datatables, System.Int32 startRecord, System.Int32 maxRecords, System.String srcTable, System.Data.IDbCommand command, System.Data.CommandBehavior behavior) [0x0003f] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.Fill (System.Data.DataTable[] dataTables, System.Int32 startRecord, System.Int32 maxRecords, System.Data.IDbCommand command, System.Data.CommandBehavior behavior) [0x0007c] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at System.Data.Common.DbDataAdapter.Fill (System.Data.DataTable dataTable) [0x00034] in <d9067a07a82148d1800232c0302a3e4e>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.Common.DbDataAdapter.Fill(System.Data.DataTable)
+  at j7+b.e () [0x000a8] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at j7.p (System.String A_0, System.Data.SQLite.SQLiteParameter[] A_1) [0x0001c] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at j7.h (System.String A_0) [0x0003c] in <f2478d3c3ff54d10b15802ca389ec17b>:0 
+  at al6.a (als A_0) [0x00164] in <4463225a949c41278883b5b49db950b0>:0 
+05-06-2021 19:16:17 Download Driver DB Ok, Version=4.0.1428646627
+05-06-2021 19:16:17 Replace DriverDb Ok
+05-06-2021 19:16:19 <DeviceConnectionControl> False_False
+05-06-2021 19:16:19 <DeviceConnectionControl> False_False
+05-06-2021 19:16:19 <Transfer2019> connect status: False_False
+05-06-2021 19:16:19 <DeviceConnectionControl> False_False
+05-06-2021 19:16:19 <ConnectionControl> StartConnect...
+05-06-2021 19:16:19 <ConnectionControl> StartConnect: connecting...
+05-06-2021 19:16:19 <ConnectionControl> StartConnect...
+05-06-2021 19:16:19 <ConnectionControl> StartConnect: connecting...
+05-06-2021 19:16:19 <DeviceConnectionControl> False_True
+05-06-2021 19:16:19 <DeviceConnectionControl> False_True
+05-06-2021 19:16:19 <Transfer2019> connect status: False_False
+05-06-2021 19:16:19 <DeviceConnectionControl> False_True
+05-06-2021 19:16:19 Connection begin IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/iPhone@14300000
+05-06-2021 19:16:19 Connection begin IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000
+05-06-2021 19:16:19 [DC_UsbTask] try connect, Times: 1
+05-06-2021 19:16:19 [DC_UsbTask] try connect, Times: 1
+05-06-2021 19:16:19 [DC_IOSCOT] Initialize ios start.
+05-06-2021 19:16:19 [DC_Listener] DoCheckService result: True
+05-06-2021 19:16:19 [DC_IOSCOT] Initialize, ios service running
+05-06-2021 19:16:19 Connection step Checking
+05-06-2021 19:16:19 [DC_UsbTask] start wait system installing.
+05-06-2021 19:16:19 [DC_UsbTask] end wait system installing.
+05-06-2021 19:16:19 [DC_UsbTask] start wait FindExpectInterface
+05-06-2021 19:16:19 * daemon started successfully
+05-06-2021 19:16:19 <DC-AndroidCOT> Initialize Result: True
+05-06-2021 19:16:19 Connection step Checking
+05-06-2021 19:16:19 [DC_UsbTask] start wait system installing.
+05-06-2021 19:16:19 [DC_UsbTask] end wait system installing.
+05-06-2021 19:16:19 [DC_UsbTask] start wait FindExpectInterface
+05-06-2021 19:16:19 [DC_UsbTask] end wait FindExpectInterface.
+05-06-2021 19:16:19 [DC_UsbTask] start PrepareCheck.
+05-06-2021 19:16:19 [DC_UsbTask] end PrepareCheck.
+05-06-2021 19:16:19 [DC_UsbTask] start GetConnectTask
+05-06-2021 19:16:19 [DC_UsbTask] end wait FindExpectInterface.
+05-06-2021 19:16:19 [DC_UsbTask] start PrepareCheck.
+05-06-2021 19:16:19 [DC-BSCOT] BC-DoConnection enter..
+05-06-2021 19:16:19 [DC-BSCOT] BC-GetWaitReadyTask skip..
+05-06-2021 19:16:19 [DC-BSCOT] BC-GetWaitReadyTask enter..
+05-06-2021 19:16:19 [DC-BSCOT] BC-WaitReadyWorker enter..
+05-06-2021 19:16:19 Connection step WaitReady
+05-06-2021 19:16:19 [DC_IOSCOT]DoWaitReady Start
+05-06-2021 19:16:19 [DC_IOSCOT] DoWaitReady before WaitDriverInstallDone
+05-06-2021 19:16:19 [DC_IOSCOT] DoWaitReady End WaitDriverInstallDone
+05-06-2021 19:16:19 [DC_IOSCOT] DoWaitReady before InitService
+05-06-2021 19:16:19 [DC_IOSCOT]InitService began
+05-06-2021 19:16:19 [DC_IOSCOT] Initialize ios start.
+05-06-2021 19:16:19 [DC_Listener] DoCheckService result: True
+05-06-2021 19:16:19 [DC_IOSCOT] Initialize, ios service running
+05-06-2021 19:16:19 [DC_IOSCOT] DoWaitReady end InitService
+05-06-2021 19:16:19 [DC_IOSCOT] start listen and wait.
+05-06-2021 19:16:19 [DC_IOSCOT] wait ready STEP_1
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: Checking
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: Checking
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: WaitReady
+05-06-2021 19:16:19 [DC_IOSCOT] service_listen: True
+05-06-2021 19:16:19 [DC_IOSCOT] wait ready STEP_2
+05-06-2021 19:16:19 [DC_UsbTask] end PrepareCheck.
+05-06-2021 19:16:19 [DC_UsbTask] usbconnecttask NeedDebuggingMode
+05-06-2021 19:16:19 [DC-BSCOT] BC-GetWaitReadyTask enter..
+05-06-2021 19:16:19 [DC-BSCOT] BC-WaitReadyWorker enter..
+05-06-2021 19:16:19 Connection step WaitReady
+05-06-2021 19:16:19 Connection step NeedDebuggingMode
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: WaitReady
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: NeedDebuggingMode
+05-06-2021 19:16:19 Download apple name file path is: /Users/svaderia/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+05-06-2021 19:16:19 start update apple name file
+05-06-2021 19:16:19 Old apple name path is: /Users/svaderia/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.socialapp/dr.fone-Restore Social App.app/Contents/Resources/Drivers/AppleiOSNames.plist
+05-06-2021 19:16:19 Start download apple name file
+05-06-2021 19:16:19 DownloadFile completed
+05-06-2021 19:16:19 end update apple name file
+05-06-2021 19:16:19 Download apple name file success 
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: NeedDebuggingMode
+05-06-2021 19:16:19 [DC_Listener] NotificationWaitHandles wait event: 00008101-000D4C3C3EE1001E
+05-06-2021 19:16:19 [DC_IOSCOT] wait_device: True
+05-06-2021 19:16:19 [DC_IOSCOT] listen and wait both ok.
+05-06-2021 19:16:19 [DC_IOSCOT]InitService began
+05-06-2021 19:16:19 [DC_IOSCOT] Initialize ios start.
+05-06-2021 19:16:19 [DC_Listener] DoCheckService result: True
+05-06-2021 19:16:19 [DC_IOSCOT] Initialize, ios service running
+05-06-2021 19:16:19 [DC_IOSCOT]DoWaitReady End DeviceListener 
+05-06-2021 19:16:19 [DC_IOSCOT] start WaitReady Task
+05-06-2021 19:16:19 WaitReadyTask start
+05-06-2021 19:16:19 WaitReadyState AllReady
+05-06-2021 19:16:19 Before WaitReady
+05-06-2021 19:16:19 Start WaitReady
+05-06-2021 19:16:19 Before HavePairedRecord
+05-06-2021 19:16:19 After HavePairedRecord
+05-06-2021 19:16:19 Connection step Ready
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: Ready
+05-06-2021 19:16:19 [DC_IOSCOT]DoWaitReady End
+05-06-2021 19:16:19 [DC-BSCOT] BC-GetWaitReadyTask result: c
+05-06-2021 19:16:19 Connection step StartSession
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: Ready
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: StartSession
+05-06-2021 19:16:19 Connection step LoadInfo
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: LoadInfo
+05-06-2021 19:16:19 ......device_ConnectStepChanged Step: LoadInfo
+05-06-2021 19:16:20 Download apple name file path is: /Users/svaderia/.config/Wondershare/dr.fone/Drivers/AppleiOSNames.plist
+05-06-2021 19:16:20 start update apple name file
+05-06-2021 19:16:20 Old apple name path is: /Users/svaderia/Library/Application Support/DrFoneApps/com.wondershare.drfonemac.socialapp/dr.fone-Restore Social App.app/Contents/Resources/Drivers/AppleiOSNames.plist
+05-06-2021 19:16:20 end update apple name file
+05-06-2021 19:16:20 Download apple name file success 
+05-06-2021 19:16:20 ......device_ConnectStepChanged Step: LoadInfo
+05-06-2021 19:16:20 Connection step Finished
+05-06-2021 19:16:20 [DC_UsbTask] end GetConnectTask : True
+05-06-2021 19:16:20 Manufacturer:Apple Inc.
+05-06-2021 19:16:20 Model:iPhone 12 Pro Max
+05-06-2021 19:16:20 SerialNumber:G6TFH0MJ0D4P
+05-06-2021 19:16:20 OSPlatform:iOS
+05-06-2021 19:16:20 OSVersion:14.6
+05-06-2021 19:16:20 Carrier:
+05-06-2021 19:16:20 Name:Shyamal’s iPhone
+05-06-2021 19:16:20 Locale:en_IN
+05-06-2021 19:16:20 <ConnectionControl> connect success, start load storageinfo...
+05-06-2021 19:16:20 Connection end IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/iPhone@14300000 Online
+05-06-2021 19:16:20 <DeviceConnectionControl> True_True
+05-06-2021 19:16:20 <DeviceConnectionControl> False_True
+05-06-2021 19:16:20 <Transfer2019> connect status: True_False
+05-06-2021 19:16:20 <DeviceConnectionControl> True_True
+05-06-2021 19:16:20 <DeviceConnectionControl> False_True
+05-06-2021 19:16:20 Connection step Completed
+05-06-2021 19:17:36 Remove device: b0bfc208
+05-06-2021 19:17:36 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000
+05-06-2021 19:17:36 ConnectionHub.RemoveConnection(IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000, b0bfc208)
+05-06-2021 19:17:40 Connection step Checking
+05-06-2021 19:17:40 ......device_ConnectStepChanged Step: Checking
+05-06-2021 19:17:40 [DC_UsbTask] start GetConnectTask
+05-06-2021 19:17:40 [DC-BSCOT] BC-DoConnection enter..
+05-06-2021 19:17:40 [DC-BSCOT] BC-GetWaitReadyTask skip..
+05-06-2021 19:17:40 [DC-BSCOT] BC-GetWaitReadyTask enter..
+05-06-2021 19:17:40 [DC-BSCOT] BC-WaitReadyWorker enter..
+05-06-2021 19:17:40 Connection step WaitReady
+05-06-2021 19:17:40 ......device_ConnectStepChanged Step: WaitReady
+05-06-2021 19:17:40 Connection step NeedAuth
+05-06-2021 19:17:40 OnADBStatus State: device unauthorized.
+05-06-2021 19:17:40 OnADBStatus NeedAuth
+05-06-2021 19:17:40 ......device_ConnectStepChanged Step: NeedAuth
+05-06-2021 19:17:40 ......device_ConnectStepChanged Step: NeedAuth
+05-06-2021 19:17:42 Add device: b0bfc208
+05-06-2021 19:17:42 ConnectionHub OnDeviceArrival:IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000
+05-06-2021 19:17:42 AddUSBConnection device: IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000
+05-06-2021 19:17:49 OnADBStatus State: device
+05-06-2021 19:17:49 Connection step Ready
+05-06-2021 19:17:49 ......device_ConnectStepChanged Step: Ready
+05-06-2021 19:17:49 [DC-BSCOT] BC-GetWaitReadyTask result: c
+05-06-2021 19:17:49 Connection step StartDaemon
+05-06-2021 19:17:49 ......device_ConnectStepChanged Step: StartDaemon
+05-06-2021 19:17:51 ......device_ConnectStepChanged Step: StartDaemon
+05-06-2021 19:17:51 daemon start failed
+05-06-2021 19:17:51 ADB uninstall App: failure [delete_failed_internal_error]
+05-06-2021 19:17:51 Connection step InstallDaemon
+05-06-2021 19:17:51 ......device_ConnectStepChanged Step: InstallDaemon
+05-06-2021 19:17:58 Connection step StartDaemon
+05-06-2021 19:17:58 ......device_ConnectStepChanged Step: StartDaemon
+05-06-2021 19:17:58 Connection step StartSession
+05-06-2021 19:17:58 ......device_ConnectStepChanged Step: StartSession
+05-06-2021 19:17:58 ADB Forward : 7867 okay
+05-06-2021 19:17:58 command channel connected!
+05-06-2021 19:17:58 Connection step LoadInfo
+05-06-2021 19:17:58 ......device_ConnectStepChanged Step: LoadInfo
+05-06-2021 19:17:58 Connection step Finished
+05-06-2021 19:17:58 ......device_ConnectStepChanged Step: Finished
+05-06-2021 19:17:58 [DC_UsbTask] end GetConnectTask : True
+05-06-2021 19:17:58 Manufacturer:OnePlus
+05-06-2021 19:17:58 Model:A6000
+05-06-2021 19:17:58 SerialNumber:b0bfc208
+05-06-2021 19:17:58 OSPlatform:Android
+05-06-2021 19:17:58 OSVersion:10
+05-06-2021 19:17:58 Carrier:
+05-06-2021 19:17:58 Name:OnePlus A6000
+05-06-2021 19:17:58 Locale:en-IN
+05-06-2021 19:17:58 <ConnectionControl> connect success, start load storageinfo...
+05-06-2021 19:17:58 Connection end IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000 Online
+05-06-2021 19:17:58 <DeviceConnectionControl> True_True
+05-06-2021 19:17:58 <DeviceConnectionControl> True_True
+05-06-2021 19:17:58 <Transfer2019> connect status: True_True
+05-06-2021 19:17:58 <DeviceConnectionControl> True_True
+05-06-2021 19:17:58 <DeviceConnectionControl> True_True
+05-06-2021 19:17:58 Connection step Completed
+05-06-2021 19:18:08 <Transfer2019Page> begin: 
+05-06-2021 19:18:27 <Transfer2019Page> ShowShareRegister
+05-06-2021 19:18:28 <Transfer2019Page> begin: 
+05-06-2021 19:18:48 <Transfer2019Page> ShowShareRegister
+05-06-2021 19:18:49 <Transfer2019Page> begin: 
+05-06-2021 19:20:00 <Transfer2019Page> ShowShareRegister
+05-06-2021 19:20:02 <Transfer2019Page> begin: 
+05-06-2021 19:20:27 <Transfer2019Page> ShowShareRegister
+05-06-2021 19:20:46 <Transfer2019Page> begin: 
+05-06-2021 19:21:04 <Transfer2019Page> ShowShareRegister
+05-06-2021 19:21:13 Device manager remove device SerialNumber: b0bfc208
+05-06-2021 19:21:13 Connection IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/OnePlus@14240000 disposed.
+05-06-2021 19:21:13 Device manager remove device SerialNumber: G6TFH0MJ0D4P
+05-06-2021 19:21:13 Connection IOService:/IOResources/AppleUSBHostResourcesTypeCBPC/AppleUSBLegacyRoot/AppleUSBXHCI@14000000/iPhone@14300000 disposed.

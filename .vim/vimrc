@@ -208,11 +208,6 @@ nnoremap <Leader><Leader> za
 
 " Plugins
 " vim-commentary        : gc (go comment)
-" vim-cutlass           : By default delete commands means delete, so we map other keys to cut
-nnoremap <Leader>x d
-xnoremap <Leader>x d
-nnoremap <Leader>xx dd
-nnoremap <Leader>X D
 
 " vim-subversive        : TODO
 " vim-yoink             : TODO

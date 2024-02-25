@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/svaderia/.oh-my-zsh/.git'
+let g:netrw_dirhist_1='/Users/svaderia/Shyamal/GitHub/Competitive-Coding/TEMPLATE'
+let g:netrw_dirhist_0='/Users/svaderia/Shyamal/GitHub/svaderia.github.io/_posts/dsa'
+let g:netrw_dirhist_9='/Users/svaderia/Shyamal/GitHub/kactl/content/appendix'
+let g:netrw_dirhist_8='/Users/svaderia/Shyamal/GitHub/kactl/content/data-structures'
+let g:netrw_dirhist_7='/Users/svaderia/Shyamal/GitHub/kactl/content/geometry'
+let g:netrw_dirhist_6='/Users/svaderia/Shyamal/GitHub/svaderia.github.io/.jekyll-cache'
+let g:netrw_dirhist_5='/Users/svaderia/Shyamal/GitHub/jbnerd.github.io'
+let g:netrw_dirhist_4='/Users/svaderia/Shyamal/GitHub/jbnerd.github.io/_algorithm_design'
+let g:netrw_dirhist_3='/Users/svaderia/Shyamal/GitHub/Competitive-Coding'

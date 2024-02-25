@@ -72,3 +72,4 @@ jdk() {
     java -version
 }
 
+alias sctf="ssh -D 8123 -C -q -N tunneller@ctf.ini.cmu.edu"

@@ -3,3 +3,7 @@ export GPG_TTY=$(tty)
 export HISTSIZE=100000
 export PATH=$PATH:$HOME/.poetry/bin
 export CCTEMPLATEPATH=$HOME/Shyamal/GitHub/Competitive-Coding/TEMPLATE
+export GO111MODULE=auto
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3

@@ -1,0 +1,177 @@
+"
+"
+" A (not so) minimal vimrc.
+"
+
+" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
+" We set it explicitely to make our position clear!
+set nocompatible
+
+filetype plugin indent on  " Load plugins according to detected filetype.
+syntax on                  " Enable syntax highlighting.
+
+set autoindent             " Indent according to previous line.
+set expandtab              " Use spaces instead of tabs.
+set softtabstop =4         " Tab key indents by 4 spaces.
+set shiftwidth  =4         " >> indents by 4 spaces.
+set tabstop     =4         "
+set shiftround             " >> indents to next multiple of 'shiftwidth'.
+
+set backspace   =indent,eol,start  " Make backspace work as you would expect.
+set hidden                 " Switch between buffers without having to save first.
+set laststatus  =2         " Always show statusline.
+set display     =lastline  " Show as much as possible of the last line.
+
+set showmode               " Show current mode in command-line.
+set showcmd                " Show already typed keys when more are expected.
+set showmatch              " show matching bracket (briefly jump)
+set scrolloff=2            " 2 lines above/below cursor when scrolling
+
+set title                  " Show file name in title bar
+set smartindent            " smart auto indenting
+set smarttab               " smart tab handling for indenting
+
+set incsearch              " Highlight while searching with / or ?.
+set hlsearch               " Keep matches highlighted.
+set ignorecase             " Ignore case when searching
+set smartcase              " Do not ignore case when all the letters are capital
+" turn off search highlight
+vnoremap <C-n> :nohlsearch<CR>
+nnoremap <C-n> :nohlsearch<CR>
+
+set ttyfast                " Faster redrawing.
+set lazyredraw             " Only redraw when necessary.
+
+set splitbelow             " Open new windows below the current window.
+set splitright             " Open new windows right of the current window.
+set cursorline             " Find the current line quickly.
+set wrapscan               " Searches wrap around end-of-file.
+set report      =0         " Always report changed lines.
+set synmaxcol   =200       " Only highlight the first 200 columns.
+
+set history=8192           " Increase History
+set list                   " Show non-printable characters.
+set noerrorbells visualbell t_vb=    "Disable annoying error noises
+set splitbelow          " Open new vertical split bottom
+set splitright          " Open new horizontal splits right
+set linebreak           " Have lines wrap instead of continue off-screen
+set scrolloff=28        " Keep cursor in approximately the middle of the screen
+
+" Going to the end and the beginning of a line
+map H ^
+map L $
+
+" Undo
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir
+
+" (Shift)Tab (de)indents code
+vnoremap <Tab> >
+vnoremap <S-Tab> <
+
+" quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Search results centered please
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+
+if has('multi_byte') && &encoding ==# 'utf-8'
+  let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
+else
+  let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
+endif
+
+set nu rnu                  " Set line numbers
+
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+" ...and in insert mode
+inoremap <Left>  <ESC>:echoe "Use h"<CR>
+inoremap <Right> <ESC>:echoe "Use l"<CR>
+inoremap <Up>    <ESC>:echoe "Use k"<CR>
+inoremap <Down>  <ESC>:echoe "Use j"<CR>
+" map jk to Esc
+inoremap jk <ESC>
+vnoremap jk <ESC>
+
+" FINDING FILES:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" Leader
+let mapleader=" "       " leader is space
+
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+"  w wq q   --  Quick Save
+nmap <Leader>w :call <SID>StripTrailingWhitespaces()<CR>:w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>wq :call <SID>StripTrailingWhitespaces()<CR>:wq<CR>
+
+" mapping enter key to enter a line in normal mode
+nnoremap <CR> o<ESC>
+
+" Enable project specific vimrc file support
+set exrc
+set secure
+
+" Code Folding
+set foldenable
+set foldlevelstart=10 " Fold only long blocks of code.
+set foldnestmax=10 " Folds can be nested, this ensures max 10 nested folds.
+set foldmethod=indent " Folding based on indentation.
+" This is especially useful for me since I spend my days in Python.
+" Other acceptable values are marker, manual, expr, syntax, diff.
+" Run :help foldmethod to find out what each of those do.
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+nnoremap <Leader><Leader> za
+
+" Turn off swap files and backups.
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Learn folding, add plugins, You can look following for the reference
+" https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc
+" Setup autocmd for running g++ files for cp
+" example : autocmd filetype python nnoremap <buffer> <F5> :w<CR>:!clear;python %<CR>
+
