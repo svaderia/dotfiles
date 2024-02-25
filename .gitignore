@@ -26,6 +26,8 @@ Temporary Items
 .apdisk
 
 .vim/undodir/*
+
+# https://stackoverflow.com/questions/8854371/vim-how-to-restore-the-cursors-logical-and-physical-positions
 .vim/view/*
 
 # make sure to not ignore gitignore
