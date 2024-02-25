@@ -26,7 +26,7 @@ set softtabstop =4          " Tab key indents by 4 spaces.
 set shiftwidth  =4          " >> indents by 4 spaces.
 set tabstop     =4
 set shiftround              " >> indents to next multiple of 'shiftwidth'.
-set mouse+=a
+set mouse+=a                " Define what does this do?
 
 set backspace   =indent,eol,start  " Make backspace work as you would expect.
 set hidden                  " Switch between buffers without having to save first.
@@ -58,14 +58,12 @@ set synmaxcol   =200        " Only highlight the first 200 columns.
 set history     =8192       " Increase History
 set list                    " Show non-printable characters.
 set noerrorbells visualbell t_vb=    "Disable annoying error noises
-set splitbelow              " Open new vertical split bottom
-set splitright              " Open new horizontal splits right
 set linebreak               " Have lines wrap instead of continue off-screen
 set scrolloff   =28         " Keep cursor in approximately the middle of the screen
 
 set nu rnu                  " Set line numbers
-
 set updatetime  =100        " Set update time to 100ms
+
 " Undo
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
@@ -130,12 +128,17 @@ nnoremap <silent> g* g*zz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
 
+" TODO: confirm this
+" I don't remember what this is for. I think this is to highlight the tab
+" characters differently than the spaces character
 if has('multi_byte') && &encoding ==# 'utf-8'
   let &listchars = 'tab:▸ ,extends:❯,precedes:❮,nbsp:±'
 else
   let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 endif
 
+" This is mapped to echo to ensure I don't end up using this mappings
+" I don't think I need this anymore, but good to have aorund
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
@@ -145,12 +148,12 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
 " map jk to Esc
 inoremap jk <ESC>
 vnoremap jk <ESC>
 
-" FINDING FILES:
-
+" FINDING FILES: " TODO : search what this is for
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -177,7 +180,7 @@ nnoremap <Leader>j <C-d>
 nnoremap <Leader>k <C-u>
 
 " strips trailing whitespace at the end of files. this
-" is called on buffer write in the autogroup above.
+" is called on buffer write in the autogroup below.
 function! <SID>StripTrailingWhitespaces()
     " save last search & cursor position
     let _s=@/
@@ -203,7 +206,8 @@ nmap <Leader>wq :call <SID>StripTrailingWhitespaces()<CR>:wq<CR>
 " fold/unfold
 nnoremap <Leader><Leader> za
 
-" Learn folding, add plugins, You can look following for the reference
+" TODO : Learn folding
+" You can look following for the reference
 " https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc
 
 " Plugins
@@ -218,7 +222,7 @@ let g:yoinkIncludeDeleteOperations=1
 " vim-system-copy       : cp{motion} cv{motion}
 let g:system_copy_silent = 1
 
-" NERDTREE
+" TODO : explore NERDTREE and get better with multifile editing
 " Close vim if only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Open nerd tree at the current file or close nerd tree if pressed again.
@@ -237,7 +241,7 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-"vim-gitgutter
+" TODO : vim-gitgutter
 " ]c & [c  : Jumbe between hunks
 " <Leader>hu : Undo Hunk
 " <Leader>hs : Stage Hunk
