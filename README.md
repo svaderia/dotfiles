@@ -41,6 +41,8 @@ config commit
 ## TODO
 * I want to add a start up script which will run all the commands required to be run on a new machine. At least have them here.
 * Maybe have a test script which will make sure all the component of my dotfiles are running correctly.
+* Read more about this here [https://dotfiles.github.io/tutorials/](https://dotfiles.github.io/tutorials/). Essentially decide if you want to switch to using the dotfiles this way.
+* I definitely need a way to have my global configs shared between systems, but still have local settings. For example, if I am on a remote machine I might want to set some aliases which wouldn't make sense elsewhere. The above link does go into handling it in multiple ways. Research and get better !
 
 ```bash
 ## Use following to update your git name and email
