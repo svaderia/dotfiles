@@ -15,6 +15,9 @@ git clone --bare https://github.com/svaderia/dotfiles $HOME/dotfiles
 config checkout
 
 config config --local status.showUntrackedFiles no
+
+# When you are first initialising the submodules on a new system, run below command
+config submodule update --init --recursive
 ```
 
 ## Updating all the packages
