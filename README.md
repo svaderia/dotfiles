@@ -37,3 +37,17 @@ config commit
 
 * [Vim: So long Pathogen, hello native package loading](https://shapeshed.com/vim-packages/)
 * [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
+
+## TODO
+* I want to add a start up script which will run all the commands required to be run on a new machine. At least have them here.
+* Maybe have a test script which will make sure all the component of my dotfiles are running correctly.
+
+```bash
+## Use following to update your git name and email
+git config --global user.name "svaderia"
+git config --global user.email "<email>"
+
+## Generate a new GPG key and set it to sign your commits with git
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
+```
