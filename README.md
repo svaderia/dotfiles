@@ -46,6 +46,8 @@ config commit
 ## Use following to update your git name and email
 git config --global user.name "svaderia"
 git config --global user.email "<email>"
+git config --global credential.helper store
+git config --global core.editor vim
 
 ## Generate a new GPG key and set it to sign your commits with git
 # https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
