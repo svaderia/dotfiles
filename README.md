@@ -33,6 +33,13 @@ rm -Rf .git/modules/.vim/pack/bundle/start/vim-airline
 config commit
 ```
 
+## Add a new vim plugin (or anynew submodule for that matter)
+```bash
+config submodule add https://github.com/kana/vim-textobj-user ~/.vim/pack/bundle/start/vim-textobj-user
+# Commit it
+config add .gitsubmodule ~/.vim/pack/bundle/start/vim-textobj-user
+config commit
+```
 ## Reference
 
 * [Vim: So long Pathogen, hello native package loading](https://shapeshed.com/vim-packages/)
