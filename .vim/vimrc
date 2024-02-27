@@ -93,7 +93,7 @@ set nowritebackup
 
 " change the word to upper char in insert mode
 " Useful when you want type a big variable name in CAPS
-inoremap <C-u> <Esc>viwUi
+inoremap <C-u> <Esc>viwUea
 
 " mapping enter key to enter a line in normal mode
 nnoremap <CR> mtO<ESC>0D`t
@@ -127,6 +127,9 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
+
+" map redo to U
+nnoremap U <C-r>
 
 " TODO: confirm this
 " I don't remember what this is for. I think this is to highlight the tab
