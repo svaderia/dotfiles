@@ -50,6 +50,11 @@ config commit
 * Maybe have a test script which will make sure all the component of my dotfiles are running correctly.
 * Read more about this here [https://dotfiles.github.io/tutorials/](https://dotfiles.github.io/tutorials/). Essentially decide if you want to switch to using the dotfiles this way.
 * I definitely need a way to have my global configs shared between systems, but still have local settings. For example, if I am on a remote machine I might want to set some aliases which wouldn't make sense elsewhere. The above link does go into handling it in multiple ways. Research and get better !
+* Change to zsh fast syntax highlighting.
+* I want to also write about all the features I am using on a blog, again for me, so that I can come to it later when I will forget that I have some functionalities I don't use.
+* Add what I installed via brew, if it contains something I use for my terminal, I can reinstall it.
+* Explore Tmux
+* Explore SSH Config
 
 ```bash
 ## Use following to update your git name and email

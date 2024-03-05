@@ -85,3 +85,9 @@
 [submodule "/Users/svaderia/.vim/pack/bundle/start/vim-textobj-clang"]
 	path = /Users/svaderia/.vim/pack/bundle/start/vim-textobj-clang
 	url = https://github.com/libclang-vim/vim-textobj-clang
+[submodule "/Users/svaderia/.vim/pack/bundle/start/tagbar"]
+	path = /Users/svaderia/.vim/pack/bundle/start/tagbar
+	url = https://github.com/preservim/tagbar
+[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-go"]
+	path = /Users/svaderia/.vim/pack/bundle/start/vim-go
+	url = https://github.com/fatih/vim-go
