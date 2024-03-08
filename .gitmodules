@@ -91,3 +91,9 @@
 [submodule "/Users/svaderia/.vim/pack/bundle/start/vim-go"]
 	path = /Users/svaderia/.vim/pack/bundle/start/vim-go
 	url = https://github.com/fatih/vim-go
+[submodule "/Users/svaderia/.vim/pack/bundle/start/ultisnips"]
+	path = /Users/svaderia/.vim/pack/bundle/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "/Users/svaderia/.config/ohmyzsh/plugins/alias-tips"]
+	path = /Users/svaderia/.config/ohmyzsh/plugins/alias-tips
+	url = https://github.com/djui/alias-tips
