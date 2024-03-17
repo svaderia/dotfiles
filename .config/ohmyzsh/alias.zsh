@@ -58,7 +58,7 @@ alias caddsub='config submodule add'
 alias cupdatesub='git submodule update --remote --merge'
 alias cst='config status'
 alias ca='config add'
-alias cc='config commit'
+alias cc='config commit --verbose'
 alias ccpush='config push'
 
 # Alias for directory hisotry
@@ -74,4 +74,5 @@ jdk() {
 
 alias sctf="ssh -D 8123 -C -q -N tunneller@ctf.ini.cmu.edu"
 
-alias ealias="vim ~/.config/ohmyzsh/alias.zsh"
+alias eal="vim ~/.config/ohmyzsh/alias.zsh"
+alias epro="vim ~/.config/ohmyzsh/profile.zsh"
