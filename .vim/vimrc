@@ -322,8 +322,6 @@ let g:go_fmt_options = {
 " I want something similar for every function out there. :)
 " See Text Objects on the tutorial for more details
 
-" Ctlr + [ should point to Ctlr + t
-map <C-[> <C-t>
 nnoremap gt <C-t>
 
 " I installed ultisnips for quickly using it with go
