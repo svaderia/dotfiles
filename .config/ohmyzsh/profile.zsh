@@ -1,4 +1,4 @@
-source local_profile.zsh
+[ -f local_profile.zsh ] && source local_profile.zsh
 export LC_ALL=en_US.UTF-8
 
 # export GPG_TTY=$(tty)

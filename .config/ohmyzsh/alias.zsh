@@ -1,4 +1,4 @@
-source local_alias.zsh
+[ -f local_alias.zsh ] && source local_alias.zsh
 alias bcd="~/bin/"
 
 alias solved="python3 ~/Shyamal/GitHub/Competitive-Coding/update_readme.py solved"
