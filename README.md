@@ -23,6 +23,10 @@ config submodule update --init --recursive
 ## Updating all the packages
 ```bash
 config submodule update --remote --merge
+
+# create the undodir for the .vim
+mkdir -p ~/.vim/undodir
+
 ```
 
 ## Remove a package
