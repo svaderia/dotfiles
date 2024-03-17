@@ -9,6 +9,9 @@ set nocompatible
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
+" disbale polyglot on *sh files, since it causes insert slowness
+let g:polyglot_disabled = ['sh', 'zsh']
+
 " Set color theme to onedark
 packadd! onedark.vim
 let g:onedark_hide_endofbuffer=1
@@ -59,7 +62,7 @@ set history     =8192       " Increase History
 set list                    " Show non-printable characters.
 set noerrorbells visualbell t_vb=    "Disable annoying error noises
 set linebreak               " Have lines wrap instead of continue off-screen
-set scrolloff   =28         " Keep cursor in approximately the middle of the screen
+set scrolloff   =10         " Keep cursor in approximately the middle of the screen
 
 set nu rnu                  " Set line numbers
 set updatetime  =100        " Set update time to 100ms
@@ -90,6 +93,10 @@ set secure
 set noswapfile
 set nobackup
 set nowritebackup
+
+" Turn the autowrite on so that whenever some build is calld, the data is
+" written automatically
+set autowrite
 
 " change the word to upper char in insert mode
 " Useful when you want type a big variable name in CAPS
@@ -173,10 +180,13 @@ nnoremap <Leader>y :%y+<CR>
 
 " Open terminal in vertical split inside vim
 nnoremap <Leader>t :vertical terminal<CR>
+nnoremap <Leader>T :terminal<CR>
 
 " Open and source vimrc
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader>el :LocalVimRCEdit<CR>
+nnoremap <Leader>sl :LocalVimRC<CR>
 
 " Page up/down
 nnoremap <Leader>j <C-d>
@@ -194,7 +204,6 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
 "  w wq q   --  Quick Save
 nmap <Leader>w :call <SID>StripTrailingWhitespaces()<CR>:w<CR>
 nmap <Leader>q :q<CR>
@@ -255,3 +264,85 @@ omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
 xmap ah <Plug>(GitGutterTextObjectOuterVisual)
+
+" map shift between buffers
+" changed because it conflicted with my competitive <leader>p
+" nnoremap <Leader>m :bnext<CR>
+" nnoremap <Leader>, :bprevious<CR>
+" nnoremap <Leader>d :bdelete<CR>
+
+" Tagbar is very interesting, It uses ctags to show the tags on fly and let
+" you move around.
+" I need to remap their <Space> mapping to something else for my <leader> to
+" work
+let g:tagbar_map_showproto = ":"
+nnoremap <Leader>u :TagbarToggle<CR>
+
+" Syntax Highlighting for vim-go
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+
+" Mappings while in the go files, uses vim-go
+" https://github.com/fatih/vim-go/wiki/Tutorial#hello-world
+" autocmd FileType go nnoremap <Leader>r <Plug>(go-test)
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nnoremap <leader>g :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nnoremap <leader>a :GoAlternate<CR>
+
+" This navigates to next issues in the quickfix window
+" would be useful for a lot of things
+nnoremap <leader>n :cnext<CR>
+nnoremap <leader>, :cprevious<CR>
+nnoremap <leader>c :cclose<CR>
+
+" They say change it to goimports
+" They already have gofmt on save. Disable is like below
+" let g:go_fmt_autosave = 0
+let g:go_fmt_command = "golines"
+let g:go_fmt_options = {
+    \ 'golines': '-m 120',
+    \ }
+
+" vim-go also provides the `af` and `if` to affect the function
+" I want something similar for every function out there. :)
+" See Text Objects on the tutorial for more details
+
+" Ctlr + [ should point to Ctlr + t
+map <C-[> <C-t>
+nnoremap gt <C-t>
+
+" I installed ultisnips for quickly using it with go
+" But I think I should explore it more
+" https://github.com/SirVer/ultisnips
+" This let's me use tab to Jump and Exapand the snippet.
+" More details in docs
+let g:UltiSnipsJumpOrExpandTrigger = "<tab>"
+
+" Here are some interesting snippets for go i can use
+" fn -> fmt.Println()
+" ff -> fmt.Printf()
+"
+
+" Position the (global) quickfix window at the very bottom of the window
+" (useful for making sure that it appears underneath splits)
+" https://github.com/fatih/vim-go/issues/108#issuecomment-565131948
+" NOTE: Using a check here to make sure that window-specific location-lists
+" aren't effected, as they use the same `FileType` as quickfix-lists.
+autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | endif
+
+
