@@ -79,21 +79,21 @@
 [submodule ".vim/pack/bundle/start/vim-dispatch"]
 	path = .vim/pack/bundle/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule "/Users/svaderia/.vim/pack/bundle/start/libclang-vim"]
-	path = /Users/svaderia/.vim/pack/bundle/start/libclang-vim
+[submodule ".vim/pack/bundle/start/libclang-vim"]
+	path = .vim/pack/bundle/start/libclang-vim
 	url = https://github.com/libclang-vim/libclang-vim
-[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-textobj-clang"]
-	path = /Users/svaderia/.vim/pack/bundle/start/vim-textobj-clang
+[submodule ".vim/pack/bundle/start/vim-textobj-clang"]
+	path = .vim/pack/bundle/start/vim-textobj-clang
 	url = https://github.com/libclang-vim/vim-textobj-clang
-[submodule "/Users/svaderia/.vim/pack/bundle/start/tagbar"]
-	path = /Users/svaderia/.vim/pack/bundle/start/tagbar
+[submodule ".vim/pack/bundle/start/tagbar"]
+	path = .vim/pack/bundle/start/tagbar
 	url = https://github.com/preservim/tagbar
-[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-go"]
-	path = /Users/svaderia/.vim/pack/bundle/start/vim-go
+[submodule ".vim/pack/bundle/start/vim-go"]
+	path = .vim/pack/bundle/start/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "/Users/svaderia/.vim/pack/bundle/start/ultisnips"]
-	path = /Users/svaderia/.vim/pack/bundle/start/ultisnips
+[submodule ".vim/pack/bundle/start/ultisnips"]
+	path = .vim/pack/bundle/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "/Users/svaderia/.config/ohmyzsh/plugins/alias-tips"]
-	path = /Users/svaderia/.config/ohmyzsh/plugins/alias-tips
+[submodule ".config/ohmyzsh/plugins/alias-tips"]
+	path = .config/ohmyzsh/plugins/alias-tips
 	url = https://github.com/djui/alias-tips
