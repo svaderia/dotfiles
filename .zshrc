@@ -76,7 +76,7 @@ ZSH_CUSTOM=$HOME/.config/ohmyzsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting alias-tips)
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -125,7 +125,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/svaderia/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/svaderia/google-cloud-sdk/path.zsh.inc'; fi
