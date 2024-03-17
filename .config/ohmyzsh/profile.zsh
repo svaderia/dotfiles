@@ -1,3 +1,4 @@
+source local_profile.zsh
 export LC_ALL=en_US.UTF-8
 
 # export GPG_TTY=$(tty)
@@ -13,9 +14,6 @@ export GO111MODULE=auto
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/bin
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.3
 
 # https://github.com/djui/alias-tips
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
