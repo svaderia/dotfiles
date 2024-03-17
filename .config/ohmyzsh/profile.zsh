@@ -10,6 +10,19 @@ export HISTSIZE=100000
 export PATH=$PATH:$HOME/.poetry/bin
 export CCTEMPLATEPATH=$HOME/Shyamal/GitHub/Competitive-Coding/TEMPLATE
 export GO111MODULE=auto
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/bin
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3
+
+# https://github.com/djui/alias-tips
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
+
+export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll vi"
+export ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
+export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_TEXT="Alias for: "
+export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES=(_ ll vi)
+
+
