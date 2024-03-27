@@ -97,3 +97,6 @@
 [submodule ".config/ohmyzsh/plugins/alias-tips"]
 	path = .config/ohmyzsh/plugins/alias-tips
 	url = https://github.com/djui/alias-tips
+[submodule "/afs/andrew.cmu.edu/usr17/svaderia/.vim/pack/bundle/start/vim-textobj-comment"]
+	path = /afs/andrew.cmu.edu/usr17/svaderia/.vim/pack/bundle/start/vim-textobj-comment
+	url = https://github.com/glts/vim-textobj-comment
