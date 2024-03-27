@@ -9,8 +9,8 @@ set nocompatible
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
-" disbale polyglot on *sh files, since it causes insert slowness
-let g:polyglot_disabled = ['sh', 'zsh']
+" disbale polyglot on *sh and md files, since it causes insert slowness
+let g:polyglot_disabled = ['sh', 'zsh', 'md', 'markdown']
 
 " Set color theme to onedark
 packadd! onedark.vim
@@ -45,7 +45,7 @@ set smartindent             " smart auto indenting
 set smarttab                " smart tab handling for indenting
 
 set incsearch               " Highlight while searching with / or ?.
-set hlsearch                " Keep matches highlighted.
+set nohlsearch              " Does not keep matches highlighted.
 set ignorecase              " Ignore case when searching
 set smartcase               " Do not ignore case when all the letters are capital
 
@@ -66,6 +66,11 @@ set scrolloff   =10         " Keep cursor in approximately the middle of the scr
 
 set nu rnu                  " Set line numbers
 set updatetime  =100        " Set update time to 100ms
+
+"experimental : https://github.com/joe-skb7/cscope-maps/blob/master/plugin/cscope_maps.vim#L156
+set timeoutlen=1000
+set ttimeout
+set ttimeoutlen=100
 
 " Undo
 set undofile " Maintain undo history between sessions
@@ -192,22 +197,10 @@ nnoremap <Leader>sl :LocalVimRC<CR>
 nnoremap <Leader>j <C-d>
 nnoremap <Leader>k <C-u>
 
-" strips trailing whitespace at the end of files. this
-" is called on buffer write in the autogroup below.
-function! <SID>StripTrailingWhitespaces()
-    " save last search & cursor position
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    %s/^\n\+/\r/e
-    let @/=_s
-    call cursor(l, c)
-endfunction
 "  w wq q   --  Quick Save
-nmap <Leader>w :call <SID>StripTrailingWhitespaces()<CR>:w<CR>
+nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-nmap <Leader>wq :call <SID>StripTrailingWhitespaces()<CR>:wq<CR>
+nmap <Leader>wq :wq<CR>
 
 " Auto saving/loading folds on exit/enter
 " Enable it after you know about functions and run this command only when file
@@ -242,6 +235,7 @@ nnoremap <silent> <expr> <Leader>b g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" :
 " Open nerdtree when you just open the vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeIgnore = ['\.o$[[file]]']
 
 " vim-localvimrc
 let g:localvimrc_sandbox=0

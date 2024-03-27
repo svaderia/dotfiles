@@ -32,3 +32,7 @@ Temporary Items
 
 # make sure to not ignore gitignore
 !.gitignore
+
+# ignore the local files
+local_alias.zsh
+local_profile.zsh
