@@ -22,7 +22,7 @@ config submodule update --init --recursive
 # Reload the shell before doing below
 
 # Don't forget to change the local_profile.zsh and local_alias.zsh to set the new paths
-cp $ZSH_CUSTOM/example_setup.zsh $ZSH_CUSTOM/00-setup.zsh
+cp $ZSH_CUSTOM/setup.zsh.example $ZSH_CUSTOM/00-setup.zsh
 touch $ZSH_CUSTOM/02-local_profile.zsh
 touch $ZSH_CUSTOM/04-local_alias.zsh
 
