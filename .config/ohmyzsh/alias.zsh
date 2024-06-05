@@ -11,7 +11,6 @@ alias svd="~/Shyamal/GitHub/svaderia.github.io"
 alias mv="mv -i"
 alias rm="rm -i"
 
-
 # Function to extract the title from a Jekyll post's front-matter and rename the current file with date-title.md
 # @param: $file            filepath of the post
 # @param: $dir_directory   (optional) filepath for the draft directory
@@ -79,8 +78,6 @@ todo (){
   vim todo.md
   cd -
 }
-
-
 
 alias ll='ls -lht'
 alias gkl="jekyll serve --config _config.yml,_config_dev.yml --drafts"
@@ -160,11 +157,12 @@ jdk() {
 
 alias sctf="ssh -D 8123 -C -q -N tunneller@ctf.ini.cmu.edu"
 
+## Easy access to change alias and profile 
 alias eal="vim ~/.config/ohmyzsh/alias.zsh"
 alias epro="vim ~/.config/ohmyzsh/profile.zsh"
 
 ## https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
-# Inspired from above, but I don't want to have so many aliases, so going to trip it down
+# Inspired from above, but I don't want to have so many aliases, so going to trim it down
 
 # the plugin, before being pulled in to core lib/git.zsh as git_current_branch()
 # to fix the core -> git plugin dependency.
