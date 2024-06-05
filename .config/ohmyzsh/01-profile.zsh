@@ -1,6 +1,8 @@
-# Define this in your local if you wish
-# TODO : use this directory for all your aliases so that it's consistent across the machines
-export GITHUB_DIR='$HOME/github/'
+if [ -z "$GITHUB_DIR" ]; then 
+  echo "GITHUB_DIR is blank, Please set it to some value in $ZSH_CUSTOM/00-setup.zsh"; 
+  echo "Run 'exec zsh -l' afger that to reload the shell"
+  echo "    A lot of stuff will not work right now."
+fi
 
 export LC_ALL=en_US.UTF-8
 
