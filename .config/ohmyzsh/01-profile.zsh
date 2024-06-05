@@ -1,3 +1,7 @@
+# Define this in your local if you wish
+# TODO : use this directory for all your aliases so that it's consistent across the machines
+export GITHUB_DIR='$HOME/github/'
+
 export LC_ALL=en_US.UTF-8
 
 # export GPG_TTY=$(tty)
