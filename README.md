@@ -18,6 +18,20 @@ config config --local status.showUntrackedFiles no
 
 # When you are first initialising the submodules on a new system, run below command
 config submodule update --init --recursive
+
+# Don't forget to change the local_profile.zsh and local_alias.zsh to set the new paths
+
+# Optional
+## Use following to update your git name and email
+## TODO: This can be moved to a global variable in profile.zsh
+git config --global user.name "svaderia"
+git config --global user.email "<email>"
+git config --global credential.helper store
+git config --global core.editor vim
+
+## Generate a new GPG key and set it to sign your commits with git
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 ```
 
 ## Updating all the packages
@@ -61,14 +75,3 @@ config commit
 * Explore Tmux
 * Explore SSH Config
 
-```bash
-## Use following to update your git name and email
-git config --global user.name "svaderia"
-git config --global user.email "<email>"
-git config --global credential.helper store
-git config --global core.editor vim
-
-## Generate a new GPG key and set it to sign your commits with git
-# https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
-# https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
-```
