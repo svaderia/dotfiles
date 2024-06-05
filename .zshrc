@@ -75,8 +75,9 @@ ZSH_CUSTOM=$HOME/.config/ohmyzsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting alias-tips)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
 
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -132,6 +133,7 @@ if [ -f '/Users/svaderia/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/svader
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/svaderia/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/svaderia/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
