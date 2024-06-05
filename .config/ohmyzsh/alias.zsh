@@ -2,8 +2,80 @@
 alias solved="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py solved"
 alias update="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py"
 
+# TODO : move this to profile
+export SVD="$HOME/Shyamal/GitHub/svaderia.github.io"
+
 alias svd="~/Shyamal/GitHub/svaderia.github.io"
-alias snip="~/Shyamal/GitHub/svaderia.github.io/_drafts/; vim snippet_$(date +%s).md; -"
+
+# Function to extract the title from a Jekyll post's front-matter and rename the current file with date-title.md
+# @param: $file            filepath of the post
+# @param: $dir_directory   (optional) filepath for the draft directory
+#
+# extracted title is converted to lowercase and the spaces are replaced with the hyphens.
+# the output file has the format YYYY-MM-DD-<title>.md
+# if the title is not present, we don't change the file name.
+#     If the draft_directory is provided, we move the file to that directory instead.
+# @output: exctracted title with prefixed directory.
+rename_jekyll_file_with_title(){
+  local file=$1
+  local draft_dir=$2
+
+  local curr_date=$(date +%F)
+
+  local title=$(awk '/^---/{flag=!flag;next} flag' "$file" | awk '/^title: /{print substr($0, index($0,$2))}' | sed 's/"//g')
+  local formatted_title=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+
+  # if title not present, then use the temp file name
+  local new_file_name=""
+  if [[ -z $formatted_title ]]; then
+    # if the title is not present in the file, then we will try to move it to the draft directory if one is provided.
+    # We will provide the draft directory from our `snip` function, but from cmd we won't when we want to rename it in place
+    new_file_name="$draft_dir$curr_date-$file"
+    title="(draft) snipping random"
+  else
+    title="(wiki) $title"
+    new_file_name=$curr_date-$formatted_title.md
+  fi
+  mv -i $file $new_file_name
+
+  echo "$title $new_file_name"
+}
+
+# Creates a new snippet file in the _posts/wiki directory
+# Renames the file with the title if exists, moves to the _draft directory otherwise
+# Commits the new file in git
+# cd to the previous directory
+snip(){
+  cd $SVD/_posts/wiki/
+
+  local curr_time=$(date +%s)
+  local file=snippet_$curr_time.md
+  vim $file
+
+  # provide draft directory to move to when required.
+  local output=$(rename_jekyll_file_with_title $file "$SVD/_drafts/")
+
+  # Split the output into an array
+  IFS=' ' read -r -a result <<< "$output"
+
+  # Assign the values to individual variables
+  local title="${result[0]}"
+  local new_file_name="${result[1]}"
+
+  # create a commit
+  git add $new_file_name
+  git commit -m "$title"
+
+  cd -
+}
+
+todo (){
+  cd $SVD/_drafts/
+  vim todo.md
+  cd -
+}
+
+
 
 alias ll='ls -lht'
 alias gkl="jekyll serve --config _config.yml,_config_dev.yml --drafts"
