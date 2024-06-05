@@ -71,8 +71,9 @@ config commit
 * Add the project path to a profile variable, which can vary in each machine. For example my path aliases depend on my Mac config, so they are useless elsewhere. They can be useful only if I have profile variables.
 * Change to zsh fast syntax highlighting.
 * I want to also write about all the features I am using on a blog, again for me, so that I can come to it later when I will forget that I have some functionalities I don't use.
-* Add what I installed via brew, if it contains something I use for my terminal, I can reinstall it.
+* Add what I installed via brew, if it contains something I use for my terminal, I can reinstall it. [^1]
 * Explore Tmux
 * Explore SSH Config
 * I might want to switch to SSH-keys for Github
 
+[^1]: See `Brewfile` and `mackup` on [driesvints/dotfiles](https://github.com/driesvints/dotfiles)
