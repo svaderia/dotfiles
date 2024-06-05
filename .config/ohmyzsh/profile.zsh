@@ -9,7 +9,9 @@ export GPG_TTY=$TTY
 
 export HISTSIZE=100000
 export PATH=$PATH:$HOME/.poetry/bin
-export CCTEMPLATEPATH=$HOME/Shyamal/GitHub/Competitive-Coding/TEMPLATE
+
+export CCTEMPLATEPATH=$HOME/Shyamal/GitHub/competitive-programming/TEMPLATE
+
 export GO111MODULE=auto
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin

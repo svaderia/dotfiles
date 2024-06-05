@@ -1,8 +1,9 @@
 [ -f local_alias.zsh ] && source local_alias.zsh
 alias bcd="~/bin/"
 
-alias solved="python3 ~/Shyamal/GitHub/Competitive-Coding/update_readme.py solved"
-alias update="python3 ~/Shyamal/GitHub/Competitive-Coding/update_readme.py"
+# TODO: move the path to an ENV variable
+alias solved="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py solved"
+alias update="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py"
 
 alias svd="~/Shyamal/GitHub/svaderia.github.io"
 alias snip="~/Shyamal/GitHub/svaderia.github.io/_drafts/; vim snippet_$(date +%s).md; -"
