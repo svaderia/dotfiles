@@ -41,7 +41,7 @@ rename_jekyll_file_with_title(){
   fi
   mv -i $file $new_file_name
 
-  echo "$title $new_file_name"
+  echo "$title,,$new_file_name"
 }
 
 # Creates a new snippet file in the _posts/wiki directory
@@ -58,12 +58,10 @@ snip(){
   # provide draft directory to move to when required.
   local output=$(rename_jekyll_file_with_title $file "$SVD/_drafts/")
 
-  # Split the output into an array
-  IFS=' ' read -r -a result <<< "$output"
-
-  # Assign the values to individual variables
-  local title="${result[0]}"
-  local new_file_name="${result[1]}"
+  # Split the output string into variables
+  local title new_file_name
+  title=$(echo "$output" | awk -F',,' '{print $1}')
+  new_file_name=$(echo "$output" | awk -F',,' '{print $2}')
 
   # create a commit
   git add $new_file_name
