@@ -315,7 +315,7 @@ let g:go_fmt_options = {
 
 " vim-go also provides the `af` and `if` to affect the function
 " I want something similar for every function out there. :)
-" See Text Objects on the tutorial for more details
+" I found it with vim-textobj-function
 
 nnoremap gt <C-t>
 
@@ -434,3 +434,5 @@ nnoremap <leader>a :call SwitchCHeader()<CR>
 " Maps Escape button in terminal window
 " Play with this more, very interesting
 autocmd BufEnter * if !empty(matchstr(@%, "terminal",0)) | tnoremap <buffer> <Esc> <C-\><C-n> | endif
+
+"Did you know `gx` opens the link under cursor to the browser?
