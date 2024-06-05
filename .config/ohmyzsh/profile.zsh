@@ -1,4 +1,3 @@
-[ -f local_profile.zsh ] && source local_profile.zsh
 export LC_ALL=en_US.UTF-8
 
 # export GPG_TTY=$(tty)
@@ -19,10 +18,8 @@ export PATH=$PATH:$HOME/bin
 
 # https://github.com/djui/alias-tips
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="Alias tip: "
-
 export ZSH_PLUGINS_ALIAS_TIPS_EXCLUDES="_ ll vi"
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_TEXT="Alias for: "
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES=(_ ll vi)
-
 

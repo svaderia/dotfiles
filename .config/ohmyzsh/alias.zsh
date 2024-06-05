@@ -1,6 +1,3 @@
-[ -f local_alias.zsh ] && source local_alias.zsh
-alias bcd="~/bin/"
-
 # TODO: move the path to an ENV variable
 alias solved="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py solved"
 alias update="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py"
