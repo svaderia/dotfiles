@@ -61,6 +61,7 @@ alias caddsub='config submodule add'
 alias cupdatesub='git submodule update --remote --merge'
 alias cst='config status'
 alias ca='config add'
+alias capa='config add --patch'
 alias cc='config commit --verbose'
 alias ccpush='config push'
 
