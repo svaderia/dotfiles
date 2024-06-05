@@ -19,7 +19,12 @@ config config --local status.showUntrackedFiles no
 # When you are first initialising the submodules on a new system, run below command
 config submodule update --init --recursive
 
+# Reload the shell before doing below
+
 # Don't forget to change the local_profile.zsh and local_alias.zsh to set the new paths
+cp $ZSH_CUSTOM/example_setup.zsh $ZSH_CUSTOM/00-setup.zsh
+touch $ZSH_CUSTOM/02-local_profile.zsh
+touch $ZSH_CUSTOM/04-local_alias.zsh
 
 # Optional
 ## Use following to update your git name and email
