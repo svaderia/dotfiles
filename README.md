@@ -74,4 +74,5 @@ config commit
 * Add what I installed via brew, if it contains something I use for my terminal, I can reinstall it.
 * Explore Tmux
 * Explore SSH Config
+* I might want to switch to SSH-keys for Github
 

@@ -15,9 +15,6 @@ alias gl='git log --pretty=format:"%h : %an : %ar : %s/"'
 
 alias py="$HOME/bin/pyscript.py"
 
-alias gstore="git config credential.helper store"
-alias gfpush="git config credential.helper store && git push origin master"
-alias gfcommit='git add . && git commit -m ":rocket: Initial Commit"'
 alias gd='git difftool'
 
 alias ip="ip -c"
