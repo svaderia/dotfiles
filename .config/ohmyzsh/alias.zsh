@@ -98,18 +98,26 @@ pyclean () {
         find . -type d -name "__pycache__" -delete
 }
 
-alias g++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2 -D DEBUG"
-alias gd++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2"
+# alias g++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2 -D DEBUG"
+# alias gd++="g++-9 -std=c++17 -Wall -Wextra -Wshadow -Wconversion -O2"
 
 start () {
     mkdir -p $1
     touch $1/test
-    cp $CCTEMPLATEPATH/solution.cpp $1/solution.cpp
+    cp $CCTEMPLATEPATH/solution.cpp $1/$2.cpp
 }
 
-sc() {
-    start $1
-    vim $1/solution.cpp
+# starts a template with solution.cpp
+# if it already exists then create a new one with timestamp appended.
+sc(){
+    local curr_time=$(date +%s)
+    if [ -e $1/solution.cpp ]; then
+      start $1 new_solution_$(curr_time)
+      vim $1/new_solution_$(curr_time).cpp
+    else
+      start $1 solution
+      vim $1/solution.cpp
+    fi
 }
 
 contest () {
@@ -117,7 +125,7 @@ contest () {
     cd $1
     for fl in {a..f}
     do
-        start "$fl"
+        start "$fl" solution
     done
 }
 
