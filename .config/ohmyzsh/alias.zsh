@@ -13,7 +13,7 @@ alias gkl="jekyll serve --config _config.yml,_config_dev.yml --drafts"
 alias kl="bundle exec jekyll serve"
 alias gl='git log --pretty=format:"%h : %an : %ar : %s/"'
 
-alias py="~/pyscript.py"
+alias py="$HOME/bin/pyscript.py"
 
 alias gstore="git config credential.helper store"
 alias gfpush="git config credential.helper store && git push origin master"
