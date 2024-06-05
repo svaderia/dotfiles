@@ -7,6 +7,11 @@ export SVD="$HOME/Shyamal/GitHub/svaderia.github.io"
 
 alias svd="~/Shyamal/GitHub/svaderia.github.io"
 
+# THIS CAN SAVE LIVES
+alias mv="mv -i"
+alias rm="rm -i"
+
+
 # Function to extract the title from a Jekyll post's front-matter and rename the current file with date-title.md
 # @param: $file            filepath of the post
 # @param: $dir_directory   (optional) filepath for the draft directory
