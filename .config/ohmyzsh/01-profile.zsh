@@ -15,7 +15,10 @@ export GPG_TTY=$TTY
 export HISTSIZE=100000
 export PATH=$PATH:$HOME/.poetry/bin
 
-export CCTEMPLATEPATH=$HOME/Shyamal/GitHub/competitive-programming/TEMPLATE
+export SVD="$GITHUB_DIR/svaderia.github.io"
+export CPD="$GITHUB_DIR/competitive-programming"
+
+export CCTEMPLATEPATH=$CPD/TEMPLATE
 
 export GO111MODULE=auto
 export GOPATH=$HOME/go

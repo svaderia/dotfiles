@@ -1,11 +1,10 @@
 # TODO: move the path to an ENV variable
-alias solved="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py solved"
-alias update="python3 ~/Shyamal/GitHub/competitive-programming/update_readme.py"
+alias solved="python3 $CPD/update_readme.py solved"
+alias update="python3 $CPD/update_readme.py"
 
-# TODO : move this to profile
-export SVD="$HOME/Shyamal/GitHub/svaderia.github.io"
-
-alias svd="~/Shyamal/GitHub/svaderia.github.io"
+alias svd="cd $SVD"
+alias ccd="cd $CPD"
+alias gcd="cd $GITHUB_DIR"
 
 # THIS CAN SAVE LIVES
 alias mv="mv -i"
@@ -158,8 +157,8 @@ jdk() {
 alias sctf="ssh -D 8123 -C -q -N tunneller@ctf.ini.cmu.edu"
 
 ## Easy access to change alias and profile 
-alias eal="vim ~/.config/ohmyzsh/alias.zsh"
-alias epro="vim ~/.config/ohmyzsh/profile.zsh"
+alias eal="vim ~/.config/ohmyzsh/03-alias.zsh"
+alias epro="vim ~/.config/ohmyzsh/01-profile.zsh"
 
 ## https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
 # Inspired from above, but I don't want to have so many aliases, so going to trim it down
