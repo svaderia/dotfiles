@@ -1,6 +1,6 @@
 # TODO: move the path to an ENV variable
-alias solved="python3 $CPD/update_readme.py solved"
-alias update="python3 $CPD/update_readme.py"
+alias solved="python $CPD/update_readme.py solved"
+alias update="python $CPD/update_readme.py"
 
 alias svd="cd $SVD"
 alias ccd="cd $CPD"
