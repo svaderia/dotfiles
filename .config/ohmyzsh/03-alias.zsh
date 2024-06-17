@@ -106,8 +106,8 @@ start () {
 sc(){
     local curr_time=$(date +%s)
     if [ -e $1/solution.cpp ]; then
-      start $1 new_solution_$(curr_time)
-      vim $1/new_solution_$(curr_time).cpp
+      start $1 new_solution_$curr_time
+      vim $1/new_solution_$curr_time.cpp
     else
       start $1 solution
       vim $1/solution.cpp
