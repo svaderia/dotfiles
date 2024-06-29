@@ -69,16 +69,18 @@ config commit
 * [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
 
 ## TODO
-* I want to add a start up script which will run all the commands required to be run on a new machine. At least have them here.
-* Maybe have a test script which will make sure all the component of my dotfiles are running correctly.
-* Read more about this here [https://dotfiles.github.io/tutorials/](https://dotfiles.github.io/tutorials/). Essentially decide if you want to switch to using the dotfiles this way.
-* I definitely need a way to have my global configs shared between systems, but still have local settings. For example, if I am on a remote machine I might want to set some aliases which wouldn't make sense elsewhere. The above link does go into handling it in multiple ways. Research and get better !
-* Add the project path to a profile variable, which can vary in each machine. For example my path aliases depend on my Mac config, so they are useless elsewhere. They can be useful only if I have profile variables.
-* Change to zsh fast syntax highlighting.
-* I want to also write about all the features I am using on a blog, again for me, so that I can come to it later when I will forget that I have some functionalities I don't use.
-* Add what I installed via brew, if it contains something I use for my terminal, I can reinstall it. [^1]
-* Explore Tmux
-* Explore SSH Config
-* I might want to switch to SSH-keys for Github
+- [X] Read more about this here [https://dotfiles.github.io/tutorials/](https://dotfiles.github.io/tutorials/). Essentially decide if you want to switch to using the dotfiles this way.
+- [X] I definitely need a way to have my global configs shared between systems, but still have local settings. For example, if I am on a remote machine I might want to set some aliases which wouldn't make sense elsewhere. The above link does go into handling it in multiple ways. Research and get better ! [^2]
+- [X] Add the project path to a profile variable, which can vary in each machine. For example my path aliases depend on my Mac config, so they are useless elsewhere. They can be useful only if I have profile variables. [^3]
+- [ ] The setup steps are documented on the README, it could be moved to a start up script
+- [ ] Change to zsh fast syntax highlighting.
+- [ ] I want to also write about all the features I am using on a blog, again for me, so that I can come to it later when I will forget that I have some functionalities I don't use.
+- [ ] Add what I installed via brew, if it contains something I use for my terminal, I can reinstall it. [^1]
+- [ ] Explore Tmux
+- [ ] Explore SSH Config
+- [ ] I might want to switch to SSH-keys for Github
+- [ ] Have a test script which will make sure all the component of my dotfiles are running correctly.
 
 [^1]: See `Brewfile` and `mackup` on [driesvints/dotfiles](https://github.com/driesvints/dotfiles)
+[^2]: This is done, You can add `local_alias.zsh` in the `$ZSH_CUSTOM/` and it will be loaded at the start up.
+[^3]: The variable is set, `$GITHUB_DIR`
