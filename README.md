@@ -36,8 +36,8 @@ git config --global core.editor vim
 
 ```
 ### Generate a new GPG key and set it to sign your commits with git
-[https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key]
-[https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key]
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 
 ## Updating all the packages
 ```bash
