@@ -1,10 +1,10 @@
-# TODO: move the path to an ENV variable
 alias solved="python $CPD/update_readme.py solved"
 alias update="python $CPD/update_readme.py"
 
 alias svd="cd $SVD"
 alias ccd="cd $CPD"
 alias gcd="cd $GITHUB_DIR"
+alias qcd="cd $GITHUB_DIR/quote-of-the-day"
 
 # THIS CAN SAVE LIVES
 alias mv="mv -i"
