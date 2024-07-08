@@ -45,4 +45,4 @@ endfunction
 nnoremap <Leader>lp :call PasteMDLink()<CR>
 nnoremap <Leader>lP o<ESC>:call PasteMDLink()<CR>
 
-iabbrev lp <ESC>:call PasteMDLink()<CR>
+iabbrev lp <ESC>:call PasteMDLink()<CR>a
