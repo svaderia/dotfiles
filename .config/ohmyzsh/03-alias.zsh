@@ -22,6 +22,7 @@ alias rm="rm -i"
 rename_jekyll_file_with_title(){
   local file=$1
   local draft_dir=$2
+  local commit_title=${3:-"wiki"}
 
   local curr_date=$(date +%F)
 
@@ -36,7 +37,7 @@ rename_jekyll_file_with_title(){
     new_file_name="$draft_dir$curr_date-$file"
     title="(draft) snipping random"
   else
-    title="(wiki) $title"
+    title="($commit_title) $title"
     new_file_name=$curr_date-$formatted_title.md
   fi
   mv -i $file $new_file_name
@@ -49,14 +50,17 @@ rename_jekyll_file_with_title(){
 # Commits the new file in git
 # cd to the previous directory
 snip(){
-  cd $SVD/_posts/wiki/
+  local default_folder=${1:-"/_posts/wiki/"}
+  local commit_title=${2:-"wiki"}
+
+  cd $SVD$default_folder
 
   local curr_time=$(date +%s)
   local file=snippet_$curr_time.md
   vim $file
 
   # provide draft directory to move to when required.
-  local output=$(rename_jekyll_file_with_title $file "$SVD/_drafts/")
+  local output=$(rename_jekyll_file_with_title $file "$SVD/_drafts/" $commit_title)
 
   # Split the output string into variables
   local title new_file_name
@@ -68,6 +72,10 @@ snip(){
   git commit -m "$title"
 
   cd -
+}
+
+dsa(){
+  snip /_posts/dsa/ dsa
 }
 
 todo (){
