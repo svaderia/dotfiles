@@ -173,11 +173,14 @@ let mapleader=" "       " leader is space
 " Copy the entire file in system clipboard
 nnoremap <Leader>y :%y+<CR>
 
+" Copy to clipboard mapping
+vnoremap <Leader>y "*y
+
 " Open terminal in vertical split inside vim
 nnoremap <Leader>t :vertical terminal<CR>
 nnoremap <Leader>T :terminal<CR>
 
-" Open and source vimrc
+" Open and source vimrc and .lvimrc
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>el :LocalVimRCEdit<CR>
