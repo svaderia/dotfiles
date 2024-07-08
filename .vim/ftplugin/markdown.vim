@@ -1,5 +1,10 @@
 " Reference : https://benjamincongdon.me/blog/2020/06/27/Vim-Tip-Paste-Markdown-Link-with-Automatic-Title-Fetching/
 " https://www.reddit.com/r/vim/comments/139fn2b/plugin_paste_markdown_link_with_title/
+
+let g:replace_map = {
+\ 'Algorithms for Competitive Programming': 'cp-algorithms',
+\ }
+
 function GetURLTitle(url)
     " Bail early if the url obviously isn't a URL.
     if a:url !~ '^https\?://'
@@ -19,6 +24,12 @@ function GetURLTitle(url)
     endif
     let title = substitute(title, '|', '-', 'g')
     let title = substitute(title, '\n', '', 'g')
+
+    " Replace strings based on the map
+    for [old, new] in items(g:replace_map)
+        let title = substitute(title, old, new, 'g')
+    endfor
+
     return title
 
 endfunction
