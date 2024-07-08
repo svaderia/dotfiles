@@ -10,7 +10,7 @@ filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
 
 " disbale polyglot on *sh and md files, since it causes insert slowness
-let g:polyglot_disabled = ['sh', 'zsh', 'md', 'markdown', 'py', 'python']
+let g:polyglot_disabled = ['sh', 'zsh', 'md', 'markdown', 'py', 'python', 'sensible']
 
 " Set color theme to onedark
 packadd! onedark.vim
@@ -22,6 +22,8 @@ colorscheme onedark
 if (has("termguicolors"))
     set termguicolors
 endif
+
+set autoread                " When the file is updated outside vim, reload it in vim
 
 set autoindent              " Indent according to previous line.
 set expandtab               " Use spaces instead of tabs.
