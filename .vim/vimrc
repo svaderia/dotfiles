@@ -429,3 +429,13 @@ nnoremap <leader>a :call SwitchCHeader()<CR>
 autocmd BufEnter * if !empty(matchstr(@%, "terminal",0)) | tnoremap <buffer> <Esc> <C-\><C-n> | endif
 
 "Did you know `gx` opens the link under cursor to the browser?
+
+" Loac fzf : If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+
+nnoremap <leader>\f :Files<cr>
+nnoremap <leader>\b :Buffers<cr>
+nnoremap <leader>\g :Rg<cr>
+nnoremap <leader>\t :Tags<cr>
+nnoremap <leader>\m :Marks<cr>
+
