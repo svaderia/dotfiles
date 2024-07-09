@@ -106,3 +106,6 @@
 [submodule "/Users/svaderia/.vim/pack/bundle/start/fzf.vim"]
 	path = .vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-markdown"]
+	path = .vim/pack/bundle/start/vim-markdown
+	url = https://github.com/preservim/vim-markdown
