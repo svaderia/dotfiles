@@ -32,3 +32,13 @@ export ZSH_PLUGINS_ALIAS_TIPS_REVEAL=1
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_TEXT="Alias for: "
 export ZSH_PLUGINS_ALIAS_TIPS_REVEAL_EXCLUDES=(_ ll vi)
 
+# source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Setting fd as the default source for fzf
+# fd by default ignores hidden files, .gitignore
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
