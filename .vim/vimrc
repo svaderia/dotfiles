@@ -247,7 +247,7 @@ endif
 " <Leader>hs : Stage Hunk
 " <Leader>hp : Preview Hunk
 command! Gqf GitGutterQuickFix | copen
-nnoremap <Leader>gf :Gqf<CR>
+" nnoremap <Leader>gf :Gqf<CR>
 omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
@@ -389,9 +389,9 @@ if has("cscope")
     nmap <leader>\a :cs find a <C-R>=expand("<cword>")<CR><CR>
     nmap <leader>\c :cs find c <C-R>=expand("<cword>")<CR><CR>
 
-    nmap <leader>\t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    " nmap <leader>\t :cs find t <C-R>=expand("<cword>")<CR><CR>
     nmap <leader>\e :cs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <leader>\f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    " nmap <leader>\f :cs find f <C-R>=expand("<cfile>")<CR><CR>
     nmap <leader>\i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <leader>\S :cs find t struct <C-R>=expand("<cword>")<CR> {<CR>
 
