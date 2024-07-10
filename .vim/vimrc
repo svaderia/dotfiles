@@ -428,15 +428,44 @@ autocmd BufEnter * if !empty(matchstr(@%, "terminal",0)) | tnoremap <buffer> <Es
 
 "Did you know `gx` opens the link under cursor to the browser?
 
-" Loac fzf : If installed using Homebrew
+" Load fzf : If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf " This is for the andrew machine where I installed it manually
 
 nnoremap <leader>\f :Files<cr>
 nnoremap <leader>\b :Buffers<cr>
 nnoremap <leader>\g :Rg<cr>
 nnoremap <leader>\t :Tags<cr>
 nnoremap <leader>\m :Marks<cr>
+nnoremap <leader>\y :FYanks<cr>
+
 " vim-yoink             :Yanks
 let g:yoinkIncludeDeleteOperations=1
 let g:yoinkSyncNumberedRegisters=1 
 
+"fzf mapping for Yanks
+function! s:yank_list()
+  redir => ys
+  silent Yanks
+  redir END
+  return split(ys, '\n')[1:]
+endfunction
+
+function! s:yank_handler(reg)
+  if empty(a:reg)
+    echo "aborted register paste"
+  else
+    let token = split(a:reg, ' ')
+    execute 'normal! "' . token[0] . 'p'
+  endif
+endfunction
+
+function! s:yanks(...) abort
+    let l:opts = {
+                \ 'source': s:yank_list(),
+                \ 'sink': function('s:yank_handler'),
+                \ }
+    call fzf#run(fzf#wrap(l:opts))
+endfunction
+
+command! -bang FYanks call s:yanks('<bang>' ==# '!')
