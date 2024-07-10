@@ -212,8 +212,6 @@ nnoremap <Leader><Leader> za
 " vim-commentary        : gc (go comment)
 
 " vim-subversive        : TODO
-" vim-yoink             : TODO
-let g:yoinkIncludeDeleteOperations=1
 
 " vim-replace-with-register : [count]["x]gr{motion}   Replace {motion} text with the contents of register x.
 " vim-sort-motion       : gs{motion} (go sort}
@@ -438,4 +436,7 @@ nnoremap <leader>\b :Buffers<cr>
 nnoremap <leader>\g :Rg<cr>
 nnoremap <leader>\t :Tags<cr>
 nnoremap <leader>\m :Marks<cr>
+" vim-yoink             :Yanks
+let g:yoinkIncludeDeleteOperations=1
+let g:yoinkSyncNumberedRegisters=1 
 
