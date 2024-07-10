@@ -63,6 +63,13 @@ config submodule add https://github.com/kana/vim-textobj-user ~/.vim/pack/bundle
 config add .gitsubmodule ~/.vim/pack/bundle/start/vim-textobj-user
 config commit
 ```
+
+## Installed tools
+* [fzf](https://github.com/junegunn/fzf/)
+* [fd](https://github.com/sharkdp/fd)
+* [ripgrep](https://github.com/BurntSushi/ripgrep) 
+
+
 ## Reference
 
 * [Vim: So long Pathogen, hello native package loading](https://shapeshed.com/vim-packages/)
