@@ -456,7 +456,7 @@ function! s:yank_handler(reg)
     echo "aborted register paste"
   else
     let token = split(a:reg, ' ')
-    execute 'normal! "' . token[0] . 'p'
+    execute 'normal! "' . token[0] . 'P'
   endif
 endfunction
 
