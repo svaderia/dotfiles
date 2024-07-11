@@ -434,7 +434,7 @@ set rtp+=~/.fzf " This is for the andrew machine where I installed it manually
 
 nnoremap <leader>\f :Files<cr>
 nnoremap <leader>\b :Buffers<cr>
-nnoremap <leader>\g :Rg<cr>
+nnoremap <leader>\r :Rg<cr>
 nnoremap <leader>\t :Tags<cr>
 nnoremap <leader>\m :Marks<cr>
 nnoremap <leader>\y :FYanks<cr>
