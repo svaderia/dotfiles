@@ -468,4 +468,4 @@ function! s:yanks(...) abort
     call fzf#run(fzf#wrap(l:opts))
 endfunction
 
-command! -bang FYanks call s:yanks('<bang>' ==# '!')
+command! FYanks call s:yanks()
