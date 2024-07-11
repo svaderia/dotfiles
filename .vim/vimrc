@@ -469,3 +469,6 @@ function! s:yanks(...) abort
 endfunction
 
 command! FYanks call s:yanks()
+
+" set the filetype when opening .S files
+autocmd BufNewFile,BufRead *.S set filetype=ia64
