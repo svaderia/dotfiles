@@ -110,7 +110,7 @@ set autowrite
 inoremap <C-u> <Esc>viwUea
 
 " mapping enter key to enter a line in normal mode
-nnoremap <CR> mtO<ESC>0D`t
+nnoremap <CR> mtO<ESC>`t
 
 " Going to the end and the beginning of a line
 map H ^
