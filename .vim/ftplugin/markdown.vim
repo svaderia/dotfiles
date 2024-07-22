@@ -46,3 +46,13 @@ nnoremap <Leader>lp :call PasteMDLink()<CR>
 nnoremap <Leader>lP o<ESC>:call PasteMDLink()<CR>
 
 iabbrev lp <ESC>:call PasteMDLink()<CR>a
+
+" concealing for md file
+set conceallevel=2
+
+" This is just for md files, since having this in all the files might be
+" irritating
+" Try auto save if it's not very annoying
+" This because my computer decided to crash yesterday and the progress I made
+" on an article is lost now
+autocmd CursorHold * update
