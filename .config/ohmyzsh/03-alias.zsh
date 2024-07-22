@@ -168,6 +168,26 @@ alias sctf="ssh -D 8123 -C -q -N tunneller@ctf.ini.cmu.edu"
 alias eal="vim ~/.config/ohmyzsh/03-alias.zsh"
 alias epro="vim ~/.config/ohmyzsh/01-profile.zsh"
 
+function lat() {
+  # Hardcoded path to the directory
+  local target_dir=$SVD
+
+  # Change to the specified directory
+  cd "$target_dir" || { echo "Failed to change directory to $target_dir"; return 1; }
+
+  # Find the latest modified file in the directory and its subdirectories
+  latest_file=$(find . -type d -name .git -prune -o -type f -exec stat -f '%m %R' "{}" \; | sort -r | head -n 1 | awk '{print $2}')
+
+  # Check if there is at least one file found
+  if [ -z "$latest_file" ]; then
+    echo "No files found in directory $target_dir or its subdirectories"
+    return 1
+  fi
+
+  # Open the latest modified file with vim
+  vim "$latest_file"
+}
+
 ## https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
 # Inspired from above, but I don't want to have so many aliases, so going to trim it down
 
