@@ -101,7 +101,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-" Turn the autowrite on so that whenever some build is calld, the data is
+" Turn the autowrite on so that whenever some build is called, the data is
 " written automatically
 set autowrite
 
