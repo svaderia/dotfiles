@@ -472,3 +472,14 @@ command! FYanks call s:yanks()
 
 " set the filetype when opening .S files
 autocmd BufNewFile,BufRead *.S set filetype=ia64
+
+
+" Indentation for new lists. We don't insert bullets as it doesn't play
+" nicely with `gq` formatting. It relies on a hack of treating bullets
+" as comment characters.
+" See https://github.com/plasticboy/vim-markdown/issues/232
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_auto_insert_bullets = 0
+
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_conceal_code_blocks = 0
