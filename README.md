@@ -70,6 +70,10 @@ config commit
 ```
 
 ## Installed tools
+If you are trying to install on linux, where you have `sudo` access, then install `brew` first and then install the tools via `brew`.
+Simple reason for this is `fzf` does not maintain active latest packages in `APT` package manage.
+
+You can otherwise install it manually as well. Brew can also be installed without root priviledges, see the installation instructions of brew.
 * [fzf](https://github.com/junegunn/fzf/)
 * [fd](https://github.com/sharkdp/fd)
 * [ripgrep](https://github.com/BurntSushi/ripgrep) 
