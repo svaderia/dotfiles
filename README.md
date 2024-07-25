@@ -19,6 +19,11 @@ config config --local status.showUntrackedFiles no
 # When you are first initialising the submodules on a new system, run below command
 config submodule update --init --recursive
 
+# If you are on linux/windows, you will need install ZSH Separetly.
+# Please follow the instructions from here:
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+# make sure to make it a default shell
+
 # Reload the shell before doing below
 
 # Don't forget to change the local_profile.zsh and local_alias.zsh to set the new paths
