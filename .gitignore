@@ -36,3 +36,4 @@ Temporary Items
 # ignore the local files
 local_alias.zsh
 local_profile.zsh
+00-setup.zsh
