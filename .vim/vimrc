@@ -433,12 +433,14 @@ autocmd BufEnter * if !empty(matchstr(@%, "terminal",0)) | tnoremap <buffer> <Es
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf " This is for the andrew machine where I installed it manually
 
+" These are fzf mappings
 nnoremap <leader>\f :Files<cr>
-nnoremap <leader>\b :Buffers<cr>
+" nnoremap <leader>\b :Buffers<cr>
+" nnoremap <leader>\t :Tags<cr>
 nnoremap <leader>\r :Rg<cr>
-nnoremap <leader>\t :Tags<cr>
 nnoremap <leader>\m :Marks<cr>
 nnoremap <leader>\y :FYanks<cr>
+nnoremap <leader>\d :Apropos<cr>
 
 " vim-yoink             :Yanks
 let g:yoinkIncludeDeleteOperations=1
@@ -491,3 +493,13 @@ let g:vim_markdown_auto_insert_bullets = 0
 
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal_code_blocks = 0
+
+" man-page
+runtime! ftplugin/man.vim
+" this changes how `K` behaves, opens the man page inside verticle vim buffer
+command! -nargs=1 Vman vert Man <args>
+set keywordprg=:Vman
+
+" Credit : https://www.reddit.com/r/vim/comments/mg8ov7/fuzzily_searching_man_pages_using_fzfvim/
+command! -nargs=? Apropos call fzf#run(fzf#wrap({'source': 'man -k -s 2,3 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'vert Man', 'options': ['--preview', 'MANPAGER=bat MANWIDTH='.(&columns/2-4).' man {}']}))
+
