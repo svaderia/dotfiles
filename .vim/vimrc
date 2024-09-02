@@ -471,9 +471,16 @@ endfunction
 
 command! FYanks call s:yanks()
 
+" change the default action on enter to open in split
+let g:fzf_action = {
+      \ 'enter': 'vsplit',
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+  \ }
+
 " set the filetype when opening .S files
 autocmd BufNewFile,BufRead *.S set filetype=ia64
-
 
 " Indentation for new lists. We don't insert bullets as it doesn't play
 " nicely with `gq` formatting. It relies on a hack of treating bullets
