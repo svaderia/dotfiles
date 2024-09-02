@@ -77,7 +77,7 @@ ZSH_CUSTOM=$HOME/.config/ohmyzsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting alias-tips)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting alias-tips colored-man-pages)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
 
