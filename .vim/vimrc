@@ -316,6 +316,7 @@ nnoremap gt <C-t>
 " This let's me use tab to Jump and Exapand the snippet.
 " More details in docs
 let g:UltiSnipsJumpOrExpandTrigger = "<tab>"
+let g:UltiSnipsEditSplit="vertical"
 
 " Here are some interesting snippets for go i can use
 " fn -> fmt.Println()
