@@ -506,3 +506,8 @@ set keywordprg=:Vman
 " Credit : https://www.reddit.com/r/vim/comments/mg8ov7/fuzzily_searching_man_pages_using_fzfvim/
 command! -nargs=? Apropos call fzf#run(fzf#wrap({'source': 'man -k -s 2,3 '.shellescape(<q-args>).' | cut -d " " -f 1', 'sink': 'vert Man', 'options': ['--preview', 'MANPAGER=bat MANWIDTH='.(&columns/2-4).' man {}']}))
 
+augroup ManPageMappings
+    autocmd!
+    autocmd FileType man nnoremap <buffer> h <C-d>
+    autocmd FileType man nnoremap <buffer> u <C-u>
+augroup END
