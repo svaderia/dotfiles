@@ -495,7 +495,9 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
 " experiment 
+" Experimenting with this feature. might keep it around
 set colorcolumn=80
+set textwidth=80
 
 " man-page
 runtime! ftplugin/man.vim
