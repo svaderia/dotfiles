@@ -515,3 +515,7 @@ augroup ManPageMappings
 augroup END
 
 set shell=/usr/bin/zsh
+
+" remove weird lines on SSH, could be due to airline
+set t_RV=
+
