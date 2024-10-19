@@ -107,7 +107,7 @@ set autowrite
 
 " change the word to upper char in insert mode
 " Useful when you want type a big variable name in CAPS
-inoremap <C-u> <Esc>viwUea
+" inoremap <C-u> <Esc>viwUea
 
 " mapping enter key to enter a line in normal mode
 nnoremap <CR> mtO<ESC>0"_D`t
@@ -435,43 +435,43 @@ set rtp+=~/.fzf " This is for the andrew machine where I installed it manually
 
 " These are fzf mappings
 nnoremap <leader>\f :Files<cr>
-" nnoremap <leader>\b :Buffers<cr>
+nnoremap <leader>\b :Buffers<cr>
 " nnoremap <leader>\t :Tags<cr>
 nnoremap <leader>\r :Rg<cr>
 nnoremap <leader>\m :Marks<cr>
-nnoremap <leader>\y :FYanks<cr>
-nnoremap <leader>\d :Apropos<cr>
+" nnoremap <leader>\y :FYanks<cr>
+nnoremap <leader>\y :Apropos<cr>
 
 " vim-yoink             :Yanks
-let g:yoinkIncludeDeleteOperations=1
-let g:yoinkSyncNumberedRegisters=1 
+" let g:yoinkIncludeDeleteOperations=1
+" let g:yoinkSyncNumberedRegisters=1 
 
 "fzf mapping for Yanks
-function! s:yank_list()
-  redir => ys
-  silent Yanks
-  redir END
-  return split(ys, '\n')[1:]
-endfunction
+" function! s:yank_list()
+"   redir => ys
+"   silent Yanks
+"   redir END
+"   return split(ys, '\n')[1:]
+" endfunction
 
-function! s:yank_handler(reg)
-  if empty(a:reg)
-    echo "aborted register paste"
-  else
-    let token = split(a:reg, ' ')
-    execute 'normal! "' . token[0] . 'P'
-  endif
-endfunction
+" function! s:yank_handler(reg)
+"   if empty(a:reg)
+"     echo ;"aborted register paste"
+"   else
+"     let token = split(a:reg, ' ')
+"     execute 'normal! "' . token[0] . 'P'
+"   endif
+" endfunction
 
-function! s:yanks(...) abort
-    let l:opts = {
-                \ 'source': s:yank_list(),
-                \ 'sink': function('s:yank_handler'),
-                \ }
-    call fzf#run(fzf#wrap(l:opts))
-endfunction
+" function! s:yanks(...) abort
+"     let l:opts = {
+"                 \ 'source': s:yank_list(),
+"                 \ 'sink': function('s:yank_handler'),
+"                 \ }
+"     call fzf#run(fzf#wrap(l:opts))
+" endfunction
 
-command! FYanks call s:yanks()
+" command! FYanks call s:yanks()
 
 " change the default action on enter to open in split
 let g:fzf_action = {
