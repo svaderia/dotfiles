@@ -513,3 +513,5 @@ augroup ManPageMappings
     autocmd FileType man nnoremap <buffer> h <C-d>
     autocmd FileType man nnoremap <buffer> u <C-u>
 augroup END
+
+set shell=/usr/bin/zsh
