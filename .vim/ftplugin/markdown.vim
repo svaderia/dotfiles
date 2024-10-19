@@ -55,4 +55,4 @@ set conceallevel=2
 " Try auto save if it's not very annoying
 " This because my computer decided to crash yesterday and the progress I made
 " on an article is lost now
-autocmd CursorHold * update
+autocmd CursorHold <buffer> update
