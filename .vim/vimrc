@@ -514,8 +514,6 @@ augroup ManPageMappings
     autocmd FileType man nnoremap <buffer> u <C-u>
 augroup END
 
-set shell=/usr/bin/zsh
-
 " remove weird lines on SSH, could be due to airline
 set t_RV=
 
