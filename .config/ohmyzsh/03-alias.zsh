@@ -10,6 +10,10 @@ alias qcd="cd $GITHUB_DIR/quote-of-the-day"
 alias mv="mv -i"
 alias rm="rm -i"
 
+# easy ssh
+alias sln="ssh svaderia@linux.andrew.cmu.edu"
+
+
 # Function to extract the title from a Jekyll post's front-matter and rename the current file with date-title.md
 # @param: $file            filepath of the post
 # @param: $dir_directory   (optional) filepath for the draft directory
