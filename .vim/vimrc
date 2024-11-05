@@ -399,7 +399,7 @@ endif
 " reset the cscope connection
 function UpdateCscope()
 	!cscope -qRb
-	cs restart
+	cs reset
 endfunction
 command CUP call UpdateCscope()
 
