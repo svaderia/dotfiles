@@ -414,9 +414,9 @@ if !exists('*SwitchCHeader')
     function! SwitchCHeader()
         " Your function's code goes here
         if (expand("%:e") == "c")
-            execute "find " . expand("%:r") . ".h"
+            execute "cscope find f " . expand("%:t:r") . ".h"
         elseif (expand("%:e") == "h")
-            execute "find " . expand("%:r") . ".c"
+            execute "cscope find f " . expand("%:t:r") . ".c"
         endif
     endfunction
 endif
