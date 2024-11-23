@@ -517,3 +517,5 @@ augroup END
 " remove weird lines on SSH, could be due to airline
 set t_RV=
 
+" Terminal scrollback should be long
+set termwinscroll=100000
