@@ -6,7 +6,8 @@ I am using git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 ```bash
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-echo "dotfiles" >> .gitignore
+# You used to need this, but not anymore 
+# echo "dotfiles" >> .gitignore
 
 git clone --bare https://github.com/svaderia/dotfiles $HOME/dotfiles
 
