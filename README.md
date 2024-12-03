@@ -74,10 +74,24 @@ config commit
 If you are trying to install on linux, where you have `sudo` access, then install `brew` first and then install the tools via `brew`.
 Simple reason for this is `fzf` does not maintain active latest packages in `APT` package manage.
 
+Install [brew](https://brew.sh/) first as below: 
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Now run following commands:
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> $ZSH_CUSTOM/02-local_profile.zsh
+```
+
 You can otherwise install it manually as well. Brew can also be installed without root priviledges, see the installation instructions of brew.
 * [fzf](https://github.com/junegunn/fzf/)
 * [fd](https://github.com/sharkdp/fd)
-* [ripgrep](https://github.com/BurntSushi/ripgrep) 
+* [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+```bash
+brew install fzf ripgrep fd
+```
 
 
 ## Reference
