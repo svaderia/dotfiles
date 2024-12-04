@@ -337,6 +337,7 @@ autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Leader
 " Load fzf : If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf " This is for the andrew machine where I installed it manually
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf " This is for the machines where I installed it via linuxbrew
 
 " These are fzf mappings
 nnoremap <leader>\f :Files<cr>
