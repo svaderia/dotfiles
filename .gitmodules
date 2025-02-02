@@ -112,3 +112,6 @@
 [submodule ".vim/pack/bundle/start/rust.vim"]
 	path = .vim/pack/bundle/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule ".vim/pack/bundle/start/lsp"]
+	path = .vim/pack/bundle/start/lsp
+	url = https://github.com/yegappan/lsp
