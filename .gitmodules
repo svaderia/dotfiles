@@ -109,3 +109,6 @@
 [submodule "/Users/svaderia/.vim/pack/bundle/start/vim-markdown"]
 	path = .vim/pack/bundle/start/vim-markdown
 	url = https://github.com/preservim/vim-markdown
+[submodule ".vim/pack/bundle/start/rust.vim"]
+	path = .vim/pack/bundle/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
