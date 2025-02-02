@@ -310,11 +310,8 @@ let g:go_fmt_options = {
 
 nnoremap gt <C-t>
 
-" I installed ultisnips for quickly using it with go
-" But I think I should explore it more
 " https://github.com/SirVer/ultisnips
 " This let's me use tab to Jump and Exapand the snippet.
-" More details in docs
 let g:UltiSnipsJumpOrExpandTrigger = "<tab>"
 let g:UltiSnipsEditSplit="vertical"
 
