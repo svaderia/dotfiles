@@ -28,26 +28,67 @@ rename_jekyll_file_with_title(){
   local draft_dir=$2
   local commit_title=${3:-"wiki"}
 
-  local curr_date=$(date +%F)
+  # ---------------------------
+  # 1) Determine the "current" date from the filename (if possible)
+  # ---------------------------
+  local basename_no_dir
+  basename_no_dir=$(basename "$file")
 
-  local title=$(awk '/^---/{flag=!flag;next} flag' "$file" | awk '/^title: /{print substr($0, index($0,$2))}' | sed 's/"//g')
-  local formatted_title=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+  regex='^([0-9]{4}-[0-9]{2}-[0-9]{2})-'
 
-  # if title not present, then use the temp file name
-  local new_file_name=""
+  # parse the first 10 characters (YYYY-MM-DD) if they match the pattern
+  local curr_date
+  if [[ $basename_no_dir =~ $regex ]]; then
+    curr_date="${match[1]}"    # e.g. 2024-05-28
+  else
+    curr_date=$(date +%F)            # fallback if no date prefix
+  fi
+
+  # ---------------------------
+  # 2) Grab the title from the front matter
+  # ---------------------------
+  local title
+  title=$(awk '/^---/{flag=!flag;next} flag' "$file" \
+       | awk '/^title: /{print substr($0, index($0,$2))}' \
+       | sed 's/"//g')
+  local formatted_title
+  formatted_title=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/ /-/g')
+
+  # ---------------------------
+  # 3) Decide on the new filename
+  # ---------------------------
+  local new_file_name
   if [[ -z $formatted_title ]]; then
-    # if the title is not present in the file, then we will try to move it to the draft directory if one is provided.
-    # We will provide the draft directory from our `snip` function, but from cmd we won't when we want to rename it in place
-    new_file_name="$draft_dir$curr_date-$file"
+    # If there's no title in the front matter, keep it as a draft
+    new_file_name="${draft_dir}${curr_date}-${basename_no_dir}"
     title="(draft) snipping random"
   else
+    # If there's a valid title, rename to <date>-<title>.md
     title="($commit_title) $title"
-    new_file_name=$curr_date-$formatted_title.md
+    new_file_name="${curr_date}-${formatted_title}.md"
   fi
-  mv -i $file $new_file_name
 
+  # rename and output
+  mv "$file" "$new_file_name"
   echo "$title,,$new_file_name"
 }
+
+undraft(){
+  local file=${1}
+
+  # provide draft directory to move to when required.
+  local output=$(rename_jekyll_file_with_title $file)
+
+  # Split the output string into variables
+  local title new_file_name
+  title=$(echo "$output" | awk -F',,' '{print $1}')
+  new_file_name=$(echo "$output" | awk -F',,' '{print $2}')
+  echo "new file anme : $new_file_name"
+  echo "$new_file_name" | od -c
+
+  mv $new_file_name $SVD/_posts/wiki/
+}
+
 
 # Creates a new snippet file in the _posts/wiki directory
 # Renames the file with the title if exists, moves to the _draft directory otherwise
