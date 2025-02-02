@@ -422,8 +422,7 @@ endif
 " nnoremap <leader>a :call SwitchCHeader()<CR>
 
 " Maps Escape button in terminal window
-" Play with this more, very interesting
-autocmd BufEnter * if !empty(matchstr(@%, "terminal",0)) | tnoremap <buffer> <Esc> <C-\><C-n> | endif
+autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Esc> <C-\><C-n> | endif
 
 "Did you know `gx` opens the link under cursor to the browser?
 
