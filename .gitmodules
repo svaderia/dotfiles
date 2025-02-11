@@ -115,3 +115,6 @@
 [submodule ".vim/pack/bundle/start/lsp"]
 	path = .vim/pack/bundle/start/lsp
 	url = https://github.com/yegappan/lsp
+[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-unimpaired"]
+	path = /Users/svaderia/.vim/pack/bundle/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired/
