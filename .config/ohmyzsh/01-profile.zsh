@@ -44,3 +44,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export _Z_ECHO=1
 eval "$(zoxide init zsh)"
+
+# Add rustup related man pages
+export RUSTUP_TOOLCHAIN_PATH=$(rustc --print sysroot)
+export MANPATH="$RUSTUP_TOOLCHAIN_PATH/share/man:$MANPATH"
+
