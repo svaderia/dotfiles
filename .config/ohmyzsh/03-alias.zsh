@@ -1,3 +1,27 @@
+# print easiy
+to_pdf() {
+  if [[ $# -lt 2 ]]; then
+    echo "Usage: enscript_to_pdf <output> <file1> [file2 file3 ...]"
+    return 1
+  fi
+
+  local output=$1
+  shift
+  local files=("$@")
+
+  # Step 1: Generate the PostScript file
+  enscript -2rG -fCourier7 -FCourier-Bold10 -p "${output}.ps" "${files[@]}"
+
+  # Step 2: Convert the PostScript file to PDF
+  ps2pdf "${output}.ps" "${output}.pdf"
+
+  # Optional: Clean up the intermediate PostScript file
+  rm -f "${output}.ps"
+
+  echo "PDF generated: ${output}.pdf"
+}
+
+# Maths
 alias solved="python $CPD/update_readme.py solved"
 alias update="python $CPD/update_readme.py"
 
