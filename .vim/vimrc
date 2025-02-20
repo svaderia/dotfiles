@@ -26,10 +26,10 @@ endif
 set autoread                " When the file is updated outside vim, reload it in vim
 
 set autoindent              " Indent according to previous line.
-set expandtab               " Use spaces instead of tabs.
+set expandtab               " Use spaces instead of tabs. `:retab` will reformat the file
 set softtabstop =4          " Tab key indents by 4 spaces.
 set shiftwidth  =4          " >> indents by 4 spaces.
-set tabstop     =4
+set tabstop     =4          " 1 tab == 4 spaces.
 set shiftround              " >> indents to next multiple of 'shiftwidth'.
 set mouse+=a                " Define what does this do?
 
