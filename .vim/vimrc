@@ -422,7 +422,9 @@ endif
 " nnoremap <leader>a :call SwitchCHeader()<CR>
 
 " Maps Escape button in terminal window
-autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Esc> <C-\><C-n> | endif
+" This is so coool, but Option + <Any key> ends up sending <Esc> to terminal
+" which is not cool :(, I use Opt+backspace and Opt+arrows heavily
+" autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Esc> <C-\><C-n> | endif
 
 "Did you know `gx` opens the link under cursor to the browser?
 
@@ -493,7 +495,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " experiment 
 " Experimenting with this feature. might keep it around
-set colorcolumn=80
+set colorcolumn=100
 set textwidth=80
 
 " man-page
@@ -548,7 +550,8 @@ call LspAddServer([#{
 	\  }])
 
 call LspOptionsSet({'autoComplete': v:false})
-call LspOptionsSet({'highligtDiagInline': v:true})
+call LspOptionsSet({'highligtDiagInline': v:false})
+call LspOptionsSet({'autoHighlightDiags': v:false})
 
 " We replace cscope maps with relavent maps in LSP and FZF
 "
@@ -581,3 +584,5 @@ setlocal tagfunc=lsp#lsp#TagFunc
 
 " Since the call hierarchy windows are pretty large, let's try to do below:
 autocmd BufWinEnter LSP-CallHierarchy resize 10
+
+nnoremap <Leader>g :w<CR>:Make<CR>
