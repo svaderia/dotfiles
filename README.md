@@ -70,6 +70,21 @@ config add .gitsubmodule ~/.vim/pack/bundle/start/vim-textobj-user
 config commit
 ```
 
+## Replace one of the submodule with your own fork
+[Swap git submodule with own fork](https://stackoverflow.com/questions/11637175/swap-git-submodule-with-own-fork) 
+[Replace a submodule of a forked repository](https://stackoverflow.com/questions/65796573/git-github-replace-a-submodule-of-a-forked-repository) 
+
+```bash
+config submodule set-url -- .vim/pack/bundle/start/vim-textobj-function https://github.com/svaderia/vim-textobj-function
+
+# Now go to directory 
+git fetch
+git checkout <your-branch>
+git pull
+
+config add .
+config commit
+```
 ## Installed tools
 If you are trying to install on linux, where you have `sudo` access, then install `brew` first and then install the tools via `brew`.
 Simple reason for this is `fzf` does not maintain active latest packages in `APT` package manage.
