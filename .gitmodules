@@ -113,5 +113,8 @@
 	path = .vim/pack/bundle/start/lsp
 	url = https://github.com/yegappan/lsp
 [submodule "/Users/svaderia/.vim/pack/bundle/start/vim-unimpaired"]
-	path = /Users/svaderia/.vim/pack/bundle/start/vim-unimpaired
+	path = .vim/pack/bundle/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired/
+[submodule ".vim/pack/bundle/start/vim-textobj-function"]
+	path = .vim/pack/bundle/start/vim-textobj-function
+	url = https://github.com/svaderia/vim-textobj-function
