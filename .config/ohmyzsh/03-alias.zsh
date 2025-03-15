@@ -248,6 +248,7 @@ alias cc='config commit --verbose'
 alias cc!='config commit --verbose --amend'
 alias ccpush='config push'
 alias ccpull='config pull'
+alias crst='config restore --staged'
 
 # Alias for directory hisotry
 alias d='dirs -v | head -10'
