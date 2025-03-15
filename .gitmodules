@@ -118,3 +118,6 @@
 [submodule ".vim/pack/bundle/start/vim-textobj-function"]
 	path = .vim/pack/bundle/start/vim-textobj-function
 	url = https://github.com/svaderia/vim-textobj-function
+[submodule ".vim/pack/bundle/start/vim-fugitive"]
+	path = .vim/pack/bundle/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
