@@ -319,12 +319,6 @@ function grename() {
   fi
 }
 
-#
-# Functions Work in Progress (WIP)
-# (sorted alphabetically by function name)
-# (order should follow README)
-#
-
 # Similar to `gunwip` but recursive "Unwips" all recent `--wip--` commits not just the last one
 function gunwipall() {
   local _commit=$(git log --grep='--wip--' --invert-grep --max-count=1 --format=format:%H)
@@ -335,30 +329,11 @@ function gunwipall() {
   fi
 }
 
-# Warn if the current branch is a WIP
-function work_in_progress() {
-  command git -c log.showSignature=false log -n 1 2>/dev/null | grep -q -- "--wip--" && echo "WIP!!"
-}
-
 # git aliases
-
-alias g='git'
 alias ga='git add'
-alias gaa='git add --all'
 alias gapa='git add --patch'
 
-alias gau='git add --update'
-alias gav='git add --verbose'
-
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
-
-alias gbs='git bisect'
-alias gbsb='git bisect bad'
-alias gbsg='git bisect good'
-alias gbsn='git bisect new'
-alias gbso='git bisect old'
-alias gbsr='git bisect reset'
-alias gbss='git bisect start'
 
 alias gbl='git blame -w'
 
@@ -385,10 +360,7 @@ function gbds() {
 
 alias gco='git checkout'
 alias gcb='git checkout -b'
-alias gcB='git checkout -B'
 alias gcm='git checkout $(git_main_branch)'
-
-alias gcl='git clone --recurse-submodules'
 
 alias gc='git commit --verbose'
 alias gc!='git commit --verbose --amend'
@@ -401,23 +373,13 @@ alias gdca='git diff --cached'
 function gdv() { git diff -w "$@" | view - }
 compdef _git gdv=git-diff
 
-alias gdup='git diff @{upstream}'
-
 alias gdt='git diff-tree --no-commit-id --name-only -r'
-
-alias glgg='git log --graph'
-alias glgga='git log --graph --decorate --all'
 
 alias glola='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --all'
 alias glol='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset"'
 
 alias glog='git log --oneline --decorate --graph'
 alias gloga='git log --oneline --decorate --graph --all'
-
-alias gfg='git ls-files | grep'
-
-alias gmtl='git mergetool --no-prompt'
-alias gmtlvim='git mergetool --no-prompt --tool=vimdiff'
 
 alias ggpull='git pull origin "$(git_current_branch)"'
 
@@ -427,40 +389,16 @@ alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase --interactive'
-alias grbd='git rebase $(git_develop_branch)'
 alias grbm='git rebase $(git_main_branch)'
-
-alias gr='git remote'
 
 alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "\--wip--" && git reset HEAD~1'
 
-alias grev='git revert'
-alias greva='git revert --abort'
-alias grevc='git revert --continue'
-
-alias grm='git rm'
-alias grmc='git rm --cached'
-
-alias gstall='git stash --all'
-alias gstaa='git stash apply'
-alias gstc='git stash clear'
-alias gstd='git stash drop'
-alias gstl='git stash list'
-alias gstp='git stash pop'
-# use the default stash push on git 2.13 and newer
-is-at-least 2.13 "$git_version" \
-  && alias gsta='git stash push' \
-  || alias gsta='git stash save'
-alias gsts='git stash show --patch'
-
 alias gst='git status'
-alias gss='git status --short'
-alias gsb='git status --short --branch'
 
-alias gsi='git submodule init'
-alias gsu='git submodule update'
+alias grst='git restore --staged'
+alias grs='git restore'
+
+alias gf='git fetch'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwt='git worktree'
-
-unset git_version
