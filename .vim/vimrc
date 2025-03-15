@@ -424,7 +424,9 @@ endif
 " Maps Escape button in terminal window
 " This is so coool, but Option + <Any key> ends up sending <Esc> to terminal
 " which is not cool :(, I use Opt+backspace and Opt+arrows heavily
+" Also CTRL + <Any key> on linux ends up sending <Esc> to the terminal :(
 " autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Esc> <C-\><C-n> | endif
+autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Leader>\ <C-\><C-n> | endif
 
 "Did you know `gx` opens the link under cursor to the browser?
 
