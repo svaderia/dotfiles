@@ -587,6 +587,22 @@ setlocal tagfunc=lsp#lsp#TagFunc
 " Since the call hierarchy windows are pretty large, let's try to do below:
 autocmd BufWinEnter LSP-CallHierarchy resize 10
 
+" Call Make if changes are there. :w<CR> might not be required.
 nnoremap <Leader>g :w<CR>:Make<CR>
 
+" Repeat a macro
 nnoremap <Leader>. @@
+
+" Also whenever you open defines.conf, set its filetype to "data"
+au BufRead,BufNewFile defines.conf* set filetype=data
+
+" Whenever Vim opens a file matching *.data, set its filetype to "data"
+au BufRead,BufNewFile *.data set filetype=data
+
+" BE AWARE: Only add this at your own risk.
+" This will override the filetype only if none is set.
+" Prevents overwritting filetypes for files like `data.rs`, `data.vim`,
+" `data.c`, etc.
+" Though this may not always work and you may need to deal with annoying
+" edgecases.
+autocmd BufRead,BufNewFile data.* if &filetype ==# '' | set filetype=data | endif
