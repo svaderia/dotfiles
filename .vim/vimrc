@@ -319,107 +319,11 @@ let g:UltiSnipsEditSplit="vertical"
 " fn -> fmt.Println()
 " ff -> fmt.Printf()
 
-" CSCOPE 
-"if has("cscope")
-
-"    """"""""""""" Standard cscope/vim boilerplate
-
-"    " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
-"    set cscopetag
-
-"    " check cscope for definition of a symbol before checking ctags: set to 1
-"    " if you want the reverse search order.
-"    set csto=0
-
-"    " hide msg when adding cscope database at start
-"    set nocscopeverbose
-
-"    " Find and add a cscope file. Either from CSCOPE_DB or by searching for it
-"    " recursively starting in the CWD and going up to /
-"    if $CSCOPE_DB != ""
-"        cs add $CSCOPE_DB
-"    else
-"        " Get all parts of our current path
-"        let dirs = split($PWD, '/')
-"        " Start building a list of paths in which to look for cscope.out
-"        let paths = ['/']
-"        " /foo/bar/baz would result in the `paths` array containing:
-"        " [/ /foo /foo/bar /foo/bar/baz]
-"        for d in dirs
-"            let paths = add(paths, paths[len(paths) - 1] . d . '/')
-"        endfor
-
-"        " List is backwards search order, so reverse it.
-"        for d in reverse(paths)
-"            let cscope_file = d . "/cscope.out"
-"            if filereadable(cscope_file)
-"                execute('cs add ' . cscope_file)
-"                break
-"            endif
-"        endfor
-"    endif
-
-"    " show msg when any other cscope db added
-"    set cscopeverbose
-
-
-"    """"""""""""" My cscope/vim key mappings
-"    "
-"    " The following maps all invoke one of the following cscope search types:
-"    "
-"    "   's'   symbol: find all references to the token under cursor
-"    "   'g'   global: find global definition(s) of the token under cursor
-"    "   'd'   called: find functions that function under cursor calls
-"    "   'a'   assignments: find places where this symbol is assigned a value
-"    "   'c'   calls:  find all calls to the function name under cursor
-
-"    "   't'   text:   find all instances of the text under cursor
-"    "   'e'   egrep:  egrep search for the word under cursor
-"    "   'f'   file:   open the filename under cursor
-"    "   'i'   includes: find files that include the filename under cursor
-"    "   'S'   struct: find struct definition under cursor
-
-"    nmap <leader>\s :cs find s <C-R>=expand("<cword>")<CR><CR>
-"    nmap <leader>\g :cs find g <C-R>=expand("<cword>")<CR><CR>
-"    nmap <leader>\d :cs find d <C-R>=expand("<cword>")<CR><CR>
-"    nmap <leader>\a :cs find a <C-R>=expand("<cword>")<CR><CR>
-"    nmap <leader>\c :cs find c <C-R>=expand("<cword>")<CR><CR>
-
-"    " nmap <leader>\t :cs find t <C-R>=expand("<cword>")<CR><CR>
-"    nmap <leader>\e :cs find e <C-R>=expand("<cword>")<CR><CR>
-"    " nmap <leader>\f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"    nmap <leader>\i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"    nmap <leader>\S :cs find t struct <C-R>=expand("<cword>")<CR> {<CR>
-
-"endif
-
-"" reset the cscope connection
-"function UpdateCscope()
-"	!cscope -qRb
-"	cs reset
-"endfunction
-"command CUP call UpdateCscope()
-
 "" Here goes the make and format
 " nnoremap <leader>g :Make<CR>
 " nnoremap <leader>f :Make format<CR>
 
 " Here should be something that folds all the comments :)
-
-" Here should be something to go to the header file
-if !exists('*SwitchCHeader')
-    function! SwitchCHeader()
-        " Your function's code goes here
-        if (expand("%:e") == "c")
-            execute "cscope find f " . expand("%:t:r") . ".h"
-        elseif (expand("%:e") == "h")
-            execute "cscope find f " . expand("%:t:r") . ".c"
-        endif
-    endfunction
-endif
-
-" see below
-" nnoremap <leader>a :call SwitchCHeader()<CR>
 
 " Maps Escape button in terminal window
 " This is so coool, but Option + <Any key> ends up sending <Esc> to terminal
@@ -445,7 +349,7 @@ nnoremap <leader>\y :Apropos<cr>
 
 " vim-yoink             :Yanks
 " let g:yoinkIncludeDeleteOperations=1
-" let g:yoinkSyncNumberedRegisters=1 
+" let g:yoinkSyncNumberedRegisters=1
 
 "fzf mapping for Yanks
 " function! s:yank_list()
@@ -495,7 +399,7 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
-" experiment 
+" experiment
 " Experimenting with this feature. might keep it around
 set colorcolumn=100
 set textwidth=80
@@ -521,71 +425,173 @@ set t_RV=
 " Terminal scrollback should be long
 set termwinscroll=100000
 
-" Add Language servers with lsp, let's see how this goes.
+if v:version > 900
+    " Add Language servers with lsp, let's see how this goes.
+    " Try to enable lsp only when vim 9+ is detected
 
-packadd lsp
+    packadd lsp
 
-" Clangd language server
-call LspAddServer([#{
-	\    name: 'clangd',
-	\    filetype: ['c', 'cpp'],
-	\    path: '/usr/bin/clangd',
-	\    args: ['--background-index']
-	\  }])
+    " Clangd language server
+    call LspAddServer([#{
+        \    name: 'clangd',
+        \    filetype: ['c', 'cpp'],
+        \    path: '/usr/bin/clangd',
+        \    args: ['--background-index']
+        \  }])
 
-" Go language server
-call LspAddServer([#{
-	\    name: 'golang',
-	\    filetype: ['go', 'gomod'],
-	\    path: '/Users/svaderia/go/bin/gopls',
-	\    args: ['serve'],
-	\    syncInit: v:true
-	\  }])
+    " Go language server
+    call LspAddServer([#{
+        \    name: 'golang',
+        \    filetype: ['go', 'gomod'],
+        \    path: '/Users/svaderia/go/bin/gopls',
+        \    args: ['serve'],
+        \    syncInit: v:true
+        \  }])
 
-" Rust language server
-call LspAddServer([#{
-	\    name: 'rustlang',
-	\    filetype: ['rust'],
-	\    path: '/usr/local/bin/rust-analyzer',
-	\    args: [],
-	\    syncInit: v:true
-	\  }])
+    " Rust language server
+    call LspAddServer([#{
+        \    name: 'rustlang',
+        \    filetype: ['rust'],
+        \    path: '/usr/local/bin/rust-analyzer',
+        \    args: [],
+        \    syncInit: v:true
+        \  }])
 
-call LspOptionsSet({'autoComplete': v:false})
-call LspOptionsSet({'highligtDiagInline': v:false})
-call LspOptionsSet({'autoHighlightDiags': v:false})
+    call LspOptionsSet({'autoComplete': v:false})
+    call LspOptionsSet({'highligtDiagInline': v:false})
+    call LspOptionsSet({'autoHighlightDiags': v:false})
 
-" We replace cscope maps with relavent maps in LSP and FZF
-"
-"   's'   symbol: Display the list of references to the keyword under cursor 
-"                   in a new location list.
-"   'g'   global: Go to the definition of the keyword under cursor.
-"   'd'   called: find functions that function under cursor calls
-"   'c'   calls:  Display the list of symbols calling the current symbol.
+    " We replace cscope maps with relavent maps in LSP and FZF
+    "
+    "   's'   symbol: Display the list of references to the keyword under cursor
+    "                   in a new location list.
+    "   'g'   global: Go to the definition of the keyword under cursor.
+    "   'd'   called: find functions that function under cursor calls
+    "   'c'   calls:  Display the list of symbols calling the current symbol.
 
-nmap <leader>\s :LspShowReferences<CR>
-nmap <leader>\g :LspGotoDefinition<CR>
-nmap <leader>\d :LspOutgoingCalls<CR>
-nmap <leader>\c :LspIncomingCalls<CR>
-nmap <leader>\e :Rg <C-R><C-W><CR>
+    nmap <leader>\s :LspShowReferences<CR>
+    nmap <leader>\g :LspGotoDefinition<CR>
+    nmap <leader>\d :LspOutgoingCalls<CR>
+    nmap <leader>\c :LspIncomingCalls<CR>
+    nmap <leader>\e :Rg <C-R><C-W><CR>
 
-nnoremap <leader>a :LspSwitchSourceHeader<CR>
+    nnoremap <leader>a :LspSwitchSourceHeader<CR>
 
-" Hmm, it looks like the OutgoingCalls and IncomingCalls cannot be opened as 
-" tags files and used to jump with just numbers.
-" Explore following for generating ctags files for rust projects:
-" https://github.com/dan-t/rusty-tags
-" https://github.com/yancyribbens/run-ctags
-" https://www.tonylykke.com/posts/2019/08/10/configure-vim-gutentags-to-use-rusty-tags/
-"
-" Following is pretty nice, it automatically keeps the tags upto date with file
-" changes.
-" https://github.com/ludovicchabant/vim-gutentags
-"
-setlocal tagfunc=lsp#lsp#TagFunc
+    " Hmm, it looks like the OutgoingCalls and IncomingCalls cannot be opened as
+    " tags files and used to jump with just numbers.
+    " Explore following for generating ctags files for rust projects:
+    " https://github.com/dan-t/rusty-tags
+    " https://github.com/yancyribbens/run-ctags
+    " https://www.tonylykke.com/posts/2019/08/10/configure-vim-gutentags-to-use-rusty-tags/
+    "
+    " Following is pretty nice, it automatically keeps the tags upto date with file
+    " changes.
+    " https://github.com/ludovicchabant/vim-gutentags
+    "
+    setlocal tagfunc=lsp#lsp#TagFunc
 
-" Since the call hierarchy windows are pretty large, let's try to do below:
-autocmd BufWinEnter LSP-CallHierarchy resize 10
+    " Since the call hierarchy windows are pretty large, let's try to do below:
+    autocmd BufWinEnter LSP-CallHierarchy resize 10
+
+else
+    " Try to Enable cscope is lsp can not be enabled
+
+    " CSCOPE
+    if has("cscope")
+
+        """"""""""""" Standard cscope/vim boilerplate
+
+        " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+        set cscopetag
+
+        " check cscope for definition of a symbol before checking ctags: set to 1
+        " if you want the reverse search order.
+        set csto=0
+
+        " hide msg when adding cscope database at start
+        set nocscopeverbose
+
+        " Find and add a cscope file. Either from CSCOPE_DB or by searching for it
+        " recursively starting in the CWD and going up to /
+        if $CSCOPE_DB != ""
+            cs add $CSCOPE_DB
+        else
+            " Get all parts of our current path
+            let dirs = split($PWD, '/')
+            " Start building a list of paths in which to look for cscope.out
+            let paths = ['/']
+            " /foo/bar/baz would result in the `paths` array containing:
+            " [/ /foo /foo/bar /foo/bar/baz]
+            for d in dirs
+                let paths = add(paths, paths[len(paths) - 1] . d . '/')
+            endfor
+
+            " List is backwards search order, so reverse it.
+            for d in reverse(paths)
+                let cscope_file = d . "/cscope.out"
+                if filereadable(cscope_file)
+                    execute('cs add ' . cscope_file)
+                    break
+                endif
+            endfor
+        endif
+
+        " show msg when any other cscope db added
+        set cscopeverbose
+
+
+        """"""""""""" My cscope/vim key mappings
+        "
+        " The following maps all invoke one of the following cscope search types:
+        "
+        "   's'   symbol: find all references to the token under cursor
+        "   'g'   global: find global definition(s) of the token under cursor
+        "   'd'   called: find functions that function under cursor calls
+        "   'a'   assignments: find places where this symbol is assigned a value
+        "   'c'   calls:  find all calls to the function name under cursor
+
+        "   't'   text:   find all instances of the text under cursor
+        "   'e'   egrep:  egrep search for the word under cursor
+        "   'f'   file:   open the filename under cursor
+        "   'i'   includes: find files that include the filename under cursor
+        "   'S'   struct: find struct definition under cursor
+
+        nmap <leader>\s :cs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>\g :cs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>\d :cs find d <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>\a :cs find a <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>\c :cs find c <C-R>=expand("<cword>")<CR><CR>
+
+        " nmap <leader>\t :cs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>\e :cs find e <C-R>=expand("<cword>")<CR><CR>
+        " nmap <leader>\f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <leader>\i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+        nmap <leader>\S :cs find t struct <C-R>=expand("<cword>")<CR> {<CR>
+
+    endif
+
+    " reset the cscope connection
+    function UpdateCscope()
+    	!cscope -qRb
+    	cs reset
+    endfunction
+    command CUP call UpdateCscope()
+
+    " Here should be something to go to the header file
+    if !exists('*SwitchCHeader')
+        function! SwitchCHeader()
+            " Your function's code goes here
+            if (expand("%:e") == "c")
+                execute "cscope find f " . expand("%:t:r") . ".h"
+            elseif (expand("%:e") == "h")
+                execute "cscope find f " . expand("%:t:r") . ".c"
+            endif
+        endfunction
+    endif
+
+    " see below
+    nnoremap <leader>a :call SwitchCHeader()<CR>
+endif
 
 " Call Make if changes are there. :w<CR> might not be required.
 nnoremap <Leader>g :w<CR>:Make<CR>
