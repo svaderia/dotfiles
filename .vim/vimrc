@@ -588,3 +588,5 @@ setlocal tagfunc=lsp#lsp#TagFunc
 autocmd BufWinEnter LSP-CallHierarchy resize 10
 
 nnoremap <Leader>g :w<CR>:Make<CR>
+
+nnoremap <Leader>. @@
