@@ -87,6 +87,12 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting alias-tips colored-man-page
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
 
+# This is generally useful when I don't have brew, but .linuxbrew
+if [ -f "$HOME/.linuxbrew/bin/brew" ]; then
+    eval "$($HOME/.linuxbrew/bin/brew shellenv)"
+fi
+
+
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
