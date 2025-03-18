@@ -385,7 +385,7 @@ alias ggpull='git pull origin "$(git_current_branch)"'
 
 alias ggpush='git push origin "$(git_current_branch)"'
 
-alias grb='git rebase'
+alias grb='git rebase --committer-date-is-author-date'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase --interactive'
