@@ -99,6 +99,16 @@ test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/bre
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> $ZSH_CUSTOM/02-local_profile.zsh
 ```
 
+If you don't have sudo on a linux machine, do following: 
+
+```
+git clone https://github.com/Homebrew/brew ~/.linuxbrew
+
+eval "$(~/.linuxbrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
+```
+
 You can otherwise install it manually as well. Brew can also be installed without root priviledges, see the installation instructions of brew.
 * [fzf](https://github.com/junegunn/fzf/)
 * [fd](https://github.com/sharkdp/fd)
