@@ -66,7 +66,7 @@ config commit
 ```bash
 config submodule add https://github.com/kana/vim-textobj-user ~/.vim/pack/bundle/start/vim-textobj-user
 # Commit it
-config add .gitsubmodule ~/.vim/pack/bundle/start/vim-textobj-user
+config add .gitmodule ~/.vim/pack/bundle/start/vim-textobj-user
 config commit
 ```
 
