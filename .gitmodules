@@ -100,10 +100,10 @@
 [submodule ".vim/pack/bundle/start/vim-textobj-comment"]
 	path = .vim/pack/bundle/start/vim-textobj-comment
 	url = https://github.com/glts/vim-textobj-comment
-[submodule "/Users/svaderia/.vim/pack/bundle/start/fzf.vim"]
+[submodule ".vim/pack/bundle/start/fzf.vim"]
 	path = .vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-markdown"]
+[submodule ".vim/pack/bundle/start/vim-markdown"]
 	path = .vim/pack/bundle/start/vim-markdown
 	url = https://github.com/preservim/vim-markdown
 [submodule ".vim/pack/bundle/start/rust.vim"]
@@ -112,7 +112,7 @@
 [submodule ".vim/pack/bundle/start/lsp"]
 	path = .vim/pack/bundle/start/lsp
 	url = https://github.com/yegappan/lsp
-[submodule "/Users/svaderia/.vim/pack/bundle/start/vim-unimpaired"]
+[submodule ".vim/pack/bundle/start/vim-unimpaired"]
 	path = .vim/pack/bundle/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired/
 [submodule ".vim/pack/bundle/start/vim-textobj-function"]
@@ -121,3 +121,6 @@
 [submodule ".vim/pack/bundle/start/vim-fugitive"]
 	path = .vim/pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/bundle/start/vim-oscyank"]
+	path = .vim/pack/bundle/start/vim-oscyank
+	url = https://github.com/ojroques/vim-oscyank
