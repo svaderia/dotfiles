@@ -330,7 +330,7 @@ let g:UltiSnipsEditSplit="vertical"
 " which is not cool :(, I use Opt+backspace and Opt+arrows heavily
 " Also CTRL + <Any key> on linux ends up sending <Esc> to the terminal :(
 " autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Esc> <C-\><C-n> | endif
-autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Leader>\ <C-\><C-n> | endif
+" autocmd TerminalWinOpen * if &buftype ==# 'terminal' | tnoremap <buffer> <Leader>\ <C-\><C-n> | endif
 
 "Did you know `gx` opens the link under cursor to the browser?
 
@@ -615,4 +615,4 @@ au BufRead,BufNewFile *.style set filetype=data
 " `data.c`, etc.
 " Though this may not always work and you may need to deal with annoying
 " edgecases.
-autocmd BufRead,BufNewFile data.* if &filetype ==# '' | set filetype=data | endif
+" autocmd BufRead,BufNewFile data.* if &filetype ==# '' | set filetype=data | endif
