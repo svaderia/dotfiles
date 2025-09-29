@@ -1,7 +1,7 @@
 "-----------------------------------------------------------------------
 " Vim syntax file
-" Language: data
-" Maintainer: Shyamal Vaderia
+" Language: 15410 data files
+" Maintainer: Shyamal Vaderia (svaderia)
 " Description: Syntax highlighting for data files
 "-----------------------------------------------------------------------
 

@@ -602,8 +602,12 @@ nnoremap <Leader>. @@
 " Also whenever you open defines.conf, set its filetype to "data"
 au BufRead,BufNewFile defines.conf* set filetype=data
 
-" Whenever Vim opens a file matching *.data, set its filetype to "data"
-au BufRead,BufNewFile *.data set filetype=data
+" Do not ever save a defines.conf out of your habit.
+au BufRead,BufNewFile defines.conf* nmap <buffer> <Leader>w :<CR>
+au BufRead,BufNewFile defines.conf* nmap <buffer> <Leader>wq :q<CR>
+
+" Also whenever you open *.style, set its filetype to "data"
+au BufRead,BufNewFile *.style set filetype=data
 
 " BE AWARE: Only add this at your own risk.
 " This will override the filetype only if none is set.
