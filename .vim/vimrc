@@ -616,3 +616,17 @@ au BufRead,BufNewFile *.style set filetype=data
 " Though this may not always work and you may need to deal with annoying
 " edgecases.
 " autocmd BufRead,BufNewFile data.* if &filetype ==# '' | set filetype=data | endif
+
+
+" TODO: do this only in a c file
+" Include header_guard
+" https://vim.fandom.com/wiki/Automatic_insertion_of_C/C%2B%2B_header_gates
+function! s:insert_gates()
+  let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+  execute "normal! i#ifndef " . gatename
+  execute "normal! o#define " . gatename . " \n"
+  execute "normal! Go#endif /* " . gatename . " */"
+  normal! kk
+endfunction
+
+nnoremap <leader>h :call <SID>insert_gates()<CR>
