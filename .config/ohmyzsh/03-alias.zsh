@@ -97,6 +97,7 @@ rename_jekyll_file_with_title(){
   echo "$title,,$new_file_name"
 }
 
+# Undraft a draft post
 undraft(){
   local file=${1}
 
@@ -108,7 +109,8 @@ undraft(){
   title=$(echo "$output" | awk -F',,' '{print $1}')
   new_file_name=$(echo "$output" | awk -F',,' '{print $2}')
   echo "new file anme : $new_file_name"
-  echo "$new_file_name" | od -c
+  echo "(snippet) $title"
+  # echo "$new_file_name" | od -c
 
   mv $new_file_name $SVD/_posts/wiki/
 }
@@ -172,6 +174,9 @@ function lat() {
 
   # Open the latest modified file with vim
   vim "$latest_file"
+
+  # go back to original directory
+  cd -
 }
 
 function dn(){
