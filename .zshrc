@@ -131,3 +131,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Uncomment this find what is slow
 # zprof
+alias ll='ls -lthr'
