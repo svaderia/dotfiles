@@ -132,3 +132,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # Uncomment this find what is slow
 # zprof
 alias ll='ls -lthr'
+
+test -e /Users/svaderia/.iterm2_shell_integration.zsh && source /Users/svaderia/.iterm2_shell_integration.zsh || true
