@@ -226,7 +226,7 @@ nnoremap <silent> <expr> <Leader>b g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" :
 " Open nerdtree when you just open the vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:NERDTreeIgnore = ['\.o$[[file]]', '\.class$[[file]]', '\.dep$[[file]]', '\.a$[[file]]']
+let g:NERDTreeIgnore = ['\.o$[[file]]', '\.class$[[file]]', '\.dep$[[file]]', '\.a$[[file]]', '\.cmake$[[file]]']
 
 " vim-localvimrc
 let g:localvimrc_sandbox=0
