@@ -337,6 +337,7 @@ let g:UltiSnipsEditSplit="vertical"
 " Load fzf : If installed using Homebrew
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf " This is for the andrew machine where I installed it manually
+set rtp+=/home/svaderia/.linuxbrew/opt/fzf " this is when I have linux brew
 
 " These are fzf mappings
 nnoremap <leader>\f :Files<cr>
