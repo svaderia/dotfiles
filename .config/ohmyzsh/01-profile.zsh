@@ -49,3 +49,4 @@ eval "$(zoxide init zsh)"
 export RUSTUP_TOOLCHAIN_PATH=$(rustc --print sysroot)
 export MANPATH="$RUSTUP_TOOLCHAIN_PATH/share/man:$MANPATH"
 
+source ~/.iterm2_shell_integration.zsh
